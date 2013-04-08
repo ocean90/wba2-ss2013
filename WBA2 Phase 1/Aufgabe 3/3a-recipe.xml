@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<recipe url="">
+	<!-- Rezeptname -->
+	<title></title>
+	<category id="" parent="">
+		<name></name>
+	</category>
+	<!-- Fotos -->
+	<images>
+		<image>
+			<title></title>
+			<author></author>
+			<source></source>
+			<size>
+				<height></height>
+				<width></width>
+			</size>
+		</image>
+	</images>
+	<!-- Zutaten -->
+	<ingredients portions="integer">
+		<ingredient>
+			<name></name>
+			<amount></amount>
+			<unit></unit>
+		</ingredient>
+	</ingredients>
+	<!-- Zubereitung -->
+	<direction>
+		<times>
+			<pre></pre>
+			<cook></cook>
+		</times>
+		<severity></severity>
+		<calories></calories>
+		<description></description>
+	</direction>
+	<!-- Kommentare -->
+	<comments>
+		<comment>
+			<author>
+				<name></name>
+				<avatar>
+					<image>
+						<source></source>
+						<size>
+							<height></height>
+							<width></width>
+						</size>
+					</image>
+				</avatar>
+				<level></level>
+			</author>
+			<date></date>
+			<isHelpful></isHelpful>
+			<content></content>
+			<!-- Verschachtelte Kommentare -->
+			<replies>
+				<comment>
+					<author>
+						<name></name>
+						<avatar>
+							<image>
+								<source></source>
+								<size>
+									<height></height>
+									<width></width>
+								</size>
+							</image>
+						</avatar>
+						<level></level>
+					</author>
+					<date></date>
+					<isHelpful></isHelpful>
+					<content></content>
+					<replies></replies>
+				</comment>
+			</replies>
+		</comment>
+	</comments>
+</recipe>

@@ -1,0 +1,31 @@
+{
+	"registration":{
+		"group":{
+			"leader":{
+				"firstname":"",
+				"lastname":"",
+				"contact":{
+					"mail":""
+				},
+				"experience":0,
+				"hasDrum":false,
+				"notes":""
+			},
+			"members":{
+				"member":[
+					{
+						"id":0,
+						"firstname":"",
+						"lastname":"",
+						"contact":{
+							"mail":""
+						},
+						"experience":0,
+						"hasDrum":false
+					}
+				]
+			}
+		},
+		"AGBaccepted":false
+	}
+}

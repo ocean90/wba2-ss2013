@@ -1,0 +1,41 @@
+{
+	"registration":{
+		"group":{
+			"leader":{
+				"firstname":"Max",
+				"lastname":"Mustermann",
+				"contact":{
+					"mail":"max.musterman@example.com"
+				},
+				"experience":"2",
+				"hasDrum":"true",
+				"notes":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
+			},
+			"members":{
+				"member":[
+					{
+						"id":"0",
+						"firstname":"Felix",
+						"lastname":"Meier",
+						"contact":{
+							"mail":"felix@example.com"
+						},
+						"experience":"1",
+						"hasDrum":"true"
+					},
+					{
+						"-id":"2",
+						"firstname":"Anna",
+						"lastname":"Becker",
+						"contact":{
+							"mail":"annabecker@example.com"
+						},
+						"experience":"1",
+						"hasDrum":"true"
+					}
+				]
+			}
+		},
+		"AGBaccepted":"true"
+	}
+}

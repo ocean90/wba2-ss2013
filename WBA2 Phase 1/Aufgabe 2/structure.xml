@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<registration>
+	<group>
+		<leader>
+			<firstname></firstname>
+			<lastname></lastname>
+			<contact>
+				<mail></mail>
+			</contact>
+			<experience></experience>
+			<hasDrum></hasDrum>
+			<notes></notes>
+		</leader>
+		<members>
+			<member id="integer">
+				<firstname></firstname>
+				<lastname></lastname>
+				<contact>
+					<mail></mail>
+				</contact>
+				<experience></experience>
+				<hasDrum></hasDrum>
+			</member>
+		</members>
+	</group>
+	<AGBaccepted></AGBaccepted>
+</registration>

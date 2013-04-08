@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<recipe url="http://www.chefkoch.de/rezepte/24641006006067/Lenchen-s-Schokoladenkuchen.html">
+	<!-- Rezeptname -->
+	<title>Lenchen’s Schokoladenkuchen</title>
+	<category id="122" parent="19">
+		<name>Backen</name>
+	</category>
+
+	<!-- Fotos -->
+	<images>
+		<image>
+			<author>brutzelstube</author>
+			<source>http://static.chefkoch-cdn.de/ck.de/rezepte/2/2464/42942-420x280-fix-lenchen-s-schokoladenkuchen.jpg</source>
+			<size>
+				<height>280</height>
+				<width>420</width>
+			</size>
+		</image>
+		<image>
+			<author>Mutschkabras</author>
+			<source>http://static.chefkoch-cdn.de/ck.de/rezepte/2/2464/33241-420x280-fix-lenchen-s-schokoladenkuchen.jpg</source>
+			<size>
+				<height>280</height>
+				<width>420</width>
+			</size>
+		</image>
+	</images>
+
+	<!-- Zutaten -->
+	<ingredients portions="16">
+		<ingredient>
+			<name>Butter</name>
+			<amount>200</amount>
+			<unit>g</unit>
+		</ingredient>
+		<ingredient>
+			<name>Zucker</name>
+			<amount>200</amount>
+			<unit>g</unit>
+		</ingredient>
+		<ingredient>
+			<name>Schokolade, Blockschokolade</name>
+			<amount>200</amount>
+			<unit>g</unit>
+		</ingredient>
+		<ingredient>
+			<name>Mehl</name>
+			<amount>120</amount>
+			<unit>g</unit>
+		</ingredient>
+		<ingredient>
+			<name>Backpulver</name>
+			<amount>0.5</amount>
+			<unit>TL</unit>
+		</ingredient>
+		<ingredient>
+			<name>Vanillezucker</name>
+			<amount>1</amount>
+			<unit>Pkt.</unit>
+		</ingredient>
+		<ingredient>
+			<name>Ei(er)</name>
+			<amount>4</amount>
+			<unit></unit>
+		</ingredient>
+	</ingredients>
+
+	<!-- Zubereitung -->
+	<direction>
+		<times>
+			<pre>60</pre>
+			<cook>50</cook>
+		</times>
+		<severity>normal</severity>
+		<calories>295</calories>
+		<description>Butter und Schokolade im Wasserbad schmelzen. Eier trennen. Eiweiß steif schlagen. Eigelbe, Zucker und Vanillezucker verrühren. Geschmolzene Butter-Schokomasse hinzufügen und mischen. Mehl mit dem Backpulver in die Masse sieben und zum Schluss die steifen Eiweiße vorsichtig unterheben. In eine gut gefettete Form geben. Bei 180°Grad 40 – 50 Minuten backen.</description>
+	</direction>
+
+	<!-- Kommentare -->
+	<comments>
+		<comment>
+			<author>
+				<name>ClaudiaK43</name>
+				<avatar>
+					<image>
+						<source>http://static.chefkoch-cdn.de/ck.de/avatar/39a4daaaf3c439939466d8c582de8c18-60fix.jpg</source>
+						<size>
+							<height>60</height>
+							<width>60</width>
+						</size>
+					</image>
+				</avatar>
+				<level>1</level>
+			</author>
+			<date>2012-04-17T09:20:47</date>
+			<isHelpful>true</isHelpful>
+			<content>Kann mir jemand sagen welche Größe die Form bei diesem Rezpet haben muss?</content>
+			<!-- Verschachtelte Kommentare -->
+			<replies>
+				<comment>
+					<author>
+						<name>esmiralda83</name>
+						<avatar>
+							<image>
+								<source>http://static.chefkoch-cdn.de/ck.de/avatar/39a4daaaf3c439939466d8c582de8c18-60fix.jpg</source>
+								<size>
+									<height>60</height>
+									<width>60</width>
+								</size>
+							</image>
+						</avatar>
+						<level>1</level>
+					</author>
+					<date>2012-05-09T11:22:47</date>
+					<isHelpful>false</isHelpful>
+					<content>Ich nehme immer ne 26er Form! Klappt super!</content>
+					<replies></replies>
+				</comment>
+			</replies>
+		</comment>
+	</comments>
+</recipe>
