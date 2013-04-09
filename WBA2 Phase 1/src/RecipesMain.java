@@ -1,30 +1,54 @@
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.util.InputMismatchException;
 
-import javax.xml.bind.*;
+import javax.xml.bind.JAXBException;
 
-import xsdobjects.*;
 
 public class RecipesMain {
 
-	private static Scanner in;
 
 	/**
 	 * @param args
 	 * @throws JAXBException
 	 * @throws FileNotFoundException
 	 */
-	public static void main(String[] args) throws JAXBException, FileNotFoundException {
-		in = new Scanner( System.in );
+	public static void main(String[] args) {
+		RecipesController controller = null;
 
-		JAXBContext jaxbContext = JAXBContext.newInstance( Recipe.class );
+		try {
+			controller = new RecipesController( "Aufgabe 3/3d-recipes.xml" );
+		} catch (FileNotFoundException e1) {
+			p( "Fehler!\n" );
+			e1.printStackTrace();
+			System.exit(1);
+		} catch (JAXBException e1) {
+			p( "Fehler!\n" );
+			e1.printStackTrace();
+			System.exit(1);
+		}
 
-		Unmarshaller unMarshaller = jaxbContext.createUnmarshaller();
-		Recipe recipe = (Recipe) unMarshaller.unmarshal( new FileInputStream( "Aufgabe 3/3d-recipe.xml" ) );
+		int input = -1;
+		try {
+			input = controller.request();
+		} catch( InputMismatchException e ) {
+			p( "Falsche Eingabe!\n" );
+			System.exit(1);
+		}
 
-		System.out.println( recipe.getTitle() );
+		switch( input ) {
+			case 0:
+				System.exit(1);
+				break;
+			case 1:
+				controller.showRecipes();
+				break;
+		}
 
+	}
+
+
+	public static void p( Object output ) {
+		System.out.println( output );
 	}
 
 }
