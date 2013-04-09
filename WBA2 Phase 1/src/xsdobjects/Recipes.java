@@ -8,6 +8,8 @@
 
 package xsdobjects;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -25,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{}image"/>
+ *         &lt;element ref="{}recipe" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +38,41 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "image"
+    "recipe"
 })
-@XmlRootElement(name = "avatar")
-public class Avatar {
+@XmlRootElement(name = "recipes")
+public class Recipes {
 
     @XmlElement(required = true)
-    protected Image image;
+    protected List<Recipe> recipe;
 
     /**
-     * Gets the value of the image property.
+     * Gets the value of the recipe property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Image }
-     *     
-     */
-    public Image getImage() {
-        return image;
-    }
-
-    /**
-     * Sets the value of the image property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the recipe property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Image }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRecipe().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Recipe }
+     * 
+     * 
      */
-    public void setImage(Image value) {
-        this.image = value;
+    public List<Recipe> getRecipe() {
+        if (recipe == null) {
+            recipe = new ArrayList<Recipe>();
+        }
+        return this.recipe;
     }
 
 }

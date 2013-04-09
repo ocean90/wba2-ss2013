@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -14,17 +15,17 @@ public class RecipesController {
 
 	private Unmarshaller unMarshaller;
 	private Marshaller marshaller;
-	private Recipe recipe;
+	private Recipes recipes;
 
 	public RecipesController( String file ) throws JAXBException, FileNotFoundException {
 		in = new Scanner( System.in );
 
-		JAXBContext jaxbContext = JAXBContext.newInstance( Recipe.class );
+		JAXBContext jaxbContext = JAXBContext.newInstance( Recipes.class );
 
 		this.unMarshaller = jaxbContext.createUnmarshaller(); // Reading
 		this.marshaller   = jaxbContext.createMarshaller(); // Writing
 
-		this.recipe = (Recipe) unMarshaller.unmarshal( new FileInputStream( file ) );
+		this.recipes = (Recipes) unMarshaller.unmarshal( new FileInputStream( file ) );
 	}
 
 	public int request() {
@@ -40,7 +41,15 @@ public class RecipesController {
 	}
 
 	public void showRecipes() {
-		System.out.print( "Eingabe: " );
+		ArrayList<Recipe> recipes = (ArrayList<Recipe>) this.recipes.getRecipe();
+
+		System.out.println( "\nGespeicherte Rezepte:" );
+
+
+		int i = 1;
+		for ( Recipe recipe : recipes ) {
+            System.out.println( "\t" + i++ + " - " + recipe.getTitle());
+      }
 	}
 
 }
