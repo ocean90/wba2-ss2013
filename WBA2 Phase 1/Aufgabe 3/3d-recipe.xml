@@ -24,8 +24,8 @@
 		<ingredient name="Schokolade, Blockschokolade" amount="200" unit="g"/>
 		<ingredient name="Mehl" amount="120" unit="g"/>
 		<ingredient name="Backpulver" amount="0.5" unit="TL"/>
-		<ingredient name="Vanillezucker" amount="1" unit="Pkt"/>
-		<ingredient name="Ei(er)" amount="4" unit=""/>
+		<ingredient name="Vanillezucker" amount="1" unit="Pkt."/>
+		<ingredient name="Ei(er)" amount="4"/>
 	</ingredients>
 	<direction>
 		<times>
@@ -54,7 +54,7 @@
 						<source>http://static.chefkoch-cdn.de/ck.de/avatar/39a4daaaf3c439939466d8c582de8c18-60fix.jpg</source>
 					</image>
 				</avatar>
-				<level>1</level>
+				<userLevel>1</userLevel>
 			</commentAuthor>
 			<date>2012-04-17T09:20:47</date>
 			<isHelpful>true</isHelpful>
@@ -68,7 +68,7 @@
 								<source>http://static.chefkoch-cdn.de/ck.de/avatar/39a4daaaf3c439939466d8c582de8c18-60fix.jpg</source>
 							</image>
 						</avatar>
-						<level>1</level>
+						<userLevel>1</userLevel>
 					</author>
 					<date>2012-05-09T11:22:47</date>
 					<isHelpful>false</isHelpful>

@@ -7,10 +7,10 @@
 				<xs:element name="title" type="xs:string"/>
 				<xs:element name="subtitle" type="xs:string" minOccurs="0"/>
 				<xs:element ref="category"/>
-				<xs:element ref="images"/>
-				<xs:element ref="ingredients"/>
+				<xs:element ref="images" minOccurs="0"/>
+				<xs:element ref="ingredients" minOccurs="1" maxOccurs="unbounded"/>
 				<xs:element ref="direction"/>
-				<xs:element ref="comments"/>
+				<xs:element ref="comments" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 			<xs:attribute type="xs:integer" name="id"/>
 		</xs:complexType>
@@ -22,14 +22,14 @@
 				<xs:element type="xs:string" name="name"/>
 			</xs:sequence>
 			<xs:attribute type="xs:integer" name="id"/>
-			<xs:attribute type="xs:integer" name="parentId"/>
+			<xs:attribute type="xs:integer" name="parentId" use="optional"/>
 		</xs:complexType>
 	</xs:element>
 
 	<xs:element name="images">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="image" maxOccurs="unbounded" minOccurs="0"/>
+				<xs:element ref="image" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -48,9 +48,9 @@
 	<xs:element name="ingredients">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="ingredient" maxOccurs="unbounded" minOccurs="0"/>
+				<xs:element ref="ingredient" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
-			<xs:attribute type="xs:byte" name="portions"/>
+			<xs:attribute type="xs:integer" name="portions"/>
 		</xs:complexType>
 	</xs:element>
 
@@ -58,21 +58,143 @@
 		<xs:complexType>
 			<xs:simpleContent>
 				<xs:extension base="xs:string">
-					<xs:attribute type="xs:string" name="name" use="optional"/>
-					<xs:attribute type="xs:float" name="amount" use="optional"/>
-					<xs:attribute type="xs:string" name="unit" use="optional"/>
+					<xs:attribute type="xs:string" name="name" use="required"/>
+					<xs:attribute ref="amount" use="optional"/>
+					<xs:attribute ref="unit" use="optional"/>
 				</xs:extension>
 			</xs:simpleContent>
 		</xs:complexType>
 	</xs:element>
 
+	<xs:attribute name="amount">
+		<xs:simpleType>
+			<xs:union>
+				<xs:simpleType>
+					<xs:restriction base="xs:float"/>
+				</xs:simpleType>
+				<xs:simpleType>
+					<xs:restriction base="xs:integer"/>
+				</xs:simpleType>
+			</xs:union>
+		</xs:simpleType>
+	</xs:attribute>
+
+	<xs:attribute name="unit" default="">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value=""/>
+				<xs:enumeration value=""/>
+				<xs:enumeration value="Becher"/>
+				<xs:enumeration value="Beutel"/>
+				<xs:enumeration value="Blatt"/>
+				<xs:enumeration value="Blätter"/>
+				<xs:enumeration value="Bund"/>
+				<xs:enumeration value="Bündel"/>
+				<xs:enumeration value="cl"/>
+				<xs:enumeration value="cm"/>
+				<xs:enumeration value="dicke"/>
+				<xs:enumeration value="dl"/>
+				<xs:enumeration value="Dose"/>
+				<xs:enumeration value="Dose/n"/>
+				<xs:enumeration value="dünne"/>
+				<xs:enumeration value="Eimer"/>
+				<xs:enumeration value="einige"/>
+				<xs:enumeration value="einige Stiele"/>
+				<xs:enumeration value="EL"/>
+				<xs:enumeration value="EL, gest."/>
+				<xs:enumeration value="etwas"/>
+				<xs:enumeration value="evtl."/>
+				<xs:enumeration value="extra"/>
+				<xs:enumeration value="Flasche"/>
+				<xs:enumeration value="Flaschen"/>
+				<xs:enumeration value="g"/>
+				<xs:enumeration value="Glas"/>
+				<xs:enumeration value="Gläser"/>
+				<xs:enumeration value="gr. Dose/n"/>
+				<xs:enumeration value="gr. Fl."/>
+				<xs:enumeration value="große"/>
+				<xs:enumeration value="großen"/>
+				<xs:enumeration value="großer"/>
+				<xs:enumeration value="großes"/>
+				<xs:enumeration value="halbe"/>
+				<xs:enumeration value="Handvoll"/>
+				<xs:enumeration value="kg"/>
+				<xs:enumeration value="kl. Bund"/>
+				<xs:enumeration value="kl. Dose/n"/>
+				<xs:enumeration value="kl. Glas"/>
+				<xs:enumeration value="kl. Kopf"/>
+				<xs:enumeration value="kl.Flasche/n"/>
+				<xs:enumeration value="kleine"/>
+				<xs:enumeration value="kleinen"/>
+				<xs:enumeration value="kleiner"/>
+				<xs:enumeration value="kleines"/>
+				<xs:enumeration value="Knolle/n"/>
+				<xs:enumeration value="Kopf"/>
+				<xs:enumeration value="Kugel"/>
+				<xs:enumeration value="Kugel/n"/>
+				<xs:enumeration value="Kugeln"/>
+				<xs:enumeration value="Kästchen"/>
+				<xs:enumeration value="Köpfe"/>
+				<xs:enumeration value="Körner"/>
+				<xs:enumeration value="Liter"/>
+				<xs:enumeration value="m.-große"/>
+				<xs:enumeration value="m.-großer"/>
+				<xs:enumeration value="m.-großes"/>
+				<xs:enumeration value="mehr"/>
+				<xs:enumeration value="mg"/>
+				<xs:enumeration value="ml"/>
+				<xs:enumeration value="Msp."/>
+				<xs:enumeration value="n. B."/>
+				<xs:enumeration value="Paar"/>
+				<xs:enumeration value="Paket"/>
+				<xs:enumeration value="Pck."/>
+				<xs:enumeration value="Pkt."/>
+				<xs:enumeration value="Platte/n"/>
+				<xs:enumeration value="Port."/>
+				<xs:enumeration value="Prise"/>
+				<xs:enumeration value="Prisen"/>
+				<xs:enumeration value="Ring/e"/>
+				<xs:enumeration value="Rippe/n"/>
+				<xs:enumeration value="Scheibe/n"/>
+				<xs:enumeration value="Scheiben"/>
+				<xs:enumeration value="Schuss"/>
+				<xs:enumeration value="Schälchen"/>
+				<xs:enumeration value="Spritzer"/>
+				<xs:enumeration value="Stange/n"/>
+				<xs:enumeration value="Stiel/e"/>
+				<xs:enumeration value="Stiele"/>
+				<xs:enumeration value="Stück"/>
+				<xs:enumeration value="Stängel"/>
+				<xs:enumeration value="Tafel"/>
+				<xs:enumeration value="Tafeln"/>
+				<xs:enumeration value="Tasse"/>
+				<xs:enumeration value="Tasse/n"/>
+				<xs:enumeration value="Teil/e"/>
+				<xs:enumeration value="TL"/>
+				<xs:enumeration value="TL, gehäuft"/>
+				<xs:enumeration value="TL, gestr."/>
+				<xs:enumeration value="Topf"/>
+				<xs:enumeration value="Tropfen"/>
+				<xs:enumeration value="Tube/n"/>
+				<xs:enumeration value="Tüte/n"/>
+				<xs:enumeration value="viel"/>
+				<xs:enumeration value="wenig"/>
+				<xs:enumeration value="Wurzel"/>
+				<xs:enumeration value="Wurzel/n"/>
+				<xs:enumeration value="Würfel"/>
+				<xs:enumeration value="Zehe/n"/>
+				<xs:enumeration value="Zweig/e"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+
 	<xs:element name="direction">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="times"/>
-				<xs:element type="xs:string" name="severity"/>
-				<xs:element type="xs:short" name="calories"/>
-				<xs:element ref="steps"/>
+				<xs:element ref="times" minOccurs="0"/>
+				<xs:element ref="severity" minOccurs="0"/>
+				<xs:element type="xs:integer" name="calories" minOccurs="0"/>
+				<xs:element ref="steps" minOccurs="1" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -80,16 +202,27 @@
 	<xs:element name="times">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element type="xs:byte" name="pre"/>
-				<xs:element type="xs:byte" name="cook"/>
+				<xs:element type="xs:integer" name="pre" minOccurs="0"/>
+				<xs:element type="xs:integer" name="cook" minOccurs="0"/>
+				<xs:element type="xs:integer" name="rest" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="severity">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="simple"/>
+				<xs:enumeration value="normal"/>
+				<xs:enumeration value="pfiffig"/>
+			</xs:restriction>
+		</xs:simpleType>
 	</xs:element>
 
 	<xs:element name="steps">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element type="xs:string" name="step" maxOccurs="unbounded" minOccurs="0"/>
+				<xs:element type="xs:string" name="step" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -97,7 +230,7 @@
 	<xs:element name="comments">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="comment"/>
+				<xs:element ref="comment" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -110,17 +243,17 @@
 						<xs:sequence>
 							<xs:element type="xs:string" name="name"/>
 							<xs:element ref="avatar"/>
-							<xs:element type="xs:integer" name="level"/>
+							<xs:element type="xs:integer" name="userLevel"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<xs:element type="xs:dateTime" name="date"/>
-				<xs:element type="xs:boolean" name="isHelpful"/>
+				<xs:element type="xs:boolean" name="isHelpful" default="false"/>
 				<xs:element type="xs:string" name="content"/>
-				<xs:element name="replies">
+				<xs:element name="replies" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="comment"/>
+							<xs:element name="comment" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
@@ -133,7 +266,7 @@
 			<xs:sequence>
 				<xs:element type="xs:string" name="name"/>
 				<xs:element ref="avatar"/>
-				<xs:element type="xs:int" name="level"/>
+				<xs:element type="xs:integer" name="level"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
