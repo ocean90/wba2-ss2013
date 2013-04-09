@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:complexType name="recipe">
+		<xs:sequence>
+			<xs:element ref="title"/>
+			<xs:element name="category" type="categoryType"/>
+			<xs:element name="images" type="imagesType"/>
+			<xs:element name="ingredients" type="ingredientsType"/>
+			<xs:element name="direction" type="directionType"/>
+			<xs:element name="comments" type="commentsType"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:IDREF"/>
+	</xs:complexType>
+
+	<xs:element name="title" type="xs:string"/>
+
+	<xs:complexType name="categoryType">
+		<xs:element name="name2" type="xs:string"/>
+		<xs:attribute name="id2" type="xs:IDREF"/>
+		<xs:attribute name="parentId2" type="xs:IDREF"/>
+	</xs:complexType>
+
+	<xs:complexType name="imagesType">
+		<xs:sequence>
+			<xs:element name="image" type="imageType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="imageType">
+		<xs:attribute name="height" type="xs:integer"/>
+		<xs:attribute name="width" type="xs:integer"/>
+		<xs:element name="source" type="xs:anyURI"/>
+		<xs:element name="author2" type="xs:string"/>
+	</xs:complexType>
+
+	<xs:complexType name="ingredientsType">
+		<xs:sequence>
+			<xs:element name="ingredient" type="ingredientType"/>
+		</xs:sequence>
+		<xs:attribute name="portions" type="xs:nonNegativeInteger"/>
+	</xs:complexType>
+
+	<xs:complexType name="ingredientType">
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute name="unit" type="xs:string"/>
+		<xs:attribute name="amount" type="xs:float"/>
+	</xs:complexType>
+
+	<xs:complexType name="directionType">
+		<xs:element ref="times"/>
+		<xs:element ref="severity"/>
+		<xs:element name="calories" type="xs:nonNegativeInteger"/>
+		<xs:element ref="steps"/>
+	</xs:complexType>
+
+	<xs:complexType name="times">
+		<xs:attribute name="pre" type="xs:nonNegativeInteger"/>
+		<xs:attribute name="cook" type="xs:nonNegativeInteger"/>
+	</xs:complexType>
+
+	<xs:simpleType name="severity">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Leicht"></xs:enumeration>
+			<xs:enumeration value="Normal"></xs:enumeration>
+			<xs:enumeration value="Schwer"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="steps">
+		<xs:sequence>
+			<xs:element name="step" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="commentsType">
+		<xs:sequence>
+			<xs:element name="comment" type="commentType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="commentType">
+		<xs:sequence>
+			<xs:element name="comments" type="commentsType"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:IDREF"/>
+		<xs:attribute name="parentId" type="xs:IDREF"/>
+		<!--<xs:element ref="author"/>
+		<xs:element name="date" type="xs:dateTime"/>
+		<xs:element name="content" type="xs:string"/>-->
+		<xs:attribute name="isHelpful" type="xs:boolean"/>
+	</xs:complexType>
+
+	<xs:complexType name="author">
+		<xs:element name="avatar" type="avatarType"/>
+		<!--<xs:element name="name" type="xs:string"/>
+		<xs:element name="content" type="xs:string"/>-->
+	</xs:complexType>
+
+	<xs:complexType name="avatarType">
+		<!-- <xs:element name="source" type="xs:anyURI"/>-->
+		<xs:attribute name="height" type="xs:integer"/>
+		<xs:attribute name="width" type="xs:integer"/>
+	</xs:complexType>
+
+</xs:schema>

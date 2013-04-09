@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="recipe">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="title" type="xs:string"/>
+				<xs:element name="subtitle" type="xs:string" minOccurs="0"/>
+				<xs:element ref="category"/>
+				<xs:element ref="images"/>
+				<xs:element ref="ingredients"/>
+				<xs:element ref="direction"/>
+				<xs:element ref="comments"/>
+			</xs:sequence>
+			<xs:attribute type="xs:integer" name="id"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="category">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="name"/>
+			</xs:sequence>
+			<xs:attribute type="xs:integer" name="id"/>
+			<xs:attribute type="xs:integer" name="parentId"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="images">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="image" maxOccurs="unbounded" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="image">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="author" minOccurs="0"/>
+				<xs:element type="xs:anyURI" name="source"/>
+			</xs:sequence>
+			<xs:attribute type="xs:integer" name="width" use="required"/>
+			<xs:attribute type="xs:integer" name="height" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ingredients">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ingredient" maxOccurs="unbounded" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute type="xs:byte" name="portions"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ingredient">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute type="xs:string" name="name" use="optional"/>
+					<xs:attribute type="xs:float" name="amount" use="optional"/>
+					<xs:attribute type="xs:string" name="unit" use="optional"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="direction">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="times"/>
+				<xs:element type="xs:string" name="severity"/>
+				<xs:element type="xs:short" name="calories"/>
+				<xs:element ref="steps"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="times">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:byte" name="pre"/>
+				<xs:element type="xs:byte" name="cook"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="steps">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="step" maxOccurs="unbounded" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="comments">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="comment"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="comment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="commentAuthor">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="name"/>
+							<xs:element ref="avatar"/>
+							<xs:element type="xs:integer" name="level"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element type="xs:dateTime" name="date"/>
+				<xs:element type="xs:boolean" name="isHelpful"/>
+				<xs:element type="xs:string" name="content"/>
+				<xs:element name="replies">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="comment"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="commentAuthor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="name"/>
+				<xs:element ref="avatar"/>
+				<xs:element type="xs:int" name="level"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="avatar">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="image"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

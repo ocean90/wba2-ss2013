@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<recipe url="">
+<recipe id="integer">
 	<!-- Rezeptname -->
 	<title></title>
-	<category id="" parent="">
+	<category id="" parentId="">
 		<name></name>
 	</category>
 	<!-- Fotos -->

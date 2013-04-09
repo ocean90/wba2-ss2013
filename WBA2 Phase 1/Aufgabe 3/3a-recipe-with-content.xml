@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<recipe url="http://www.chefkoch.de/rezepte/24641006006067/Lenchen-s-Schokoladenkuchen.html">
+<?xml version="1.0" encoding="UTF-8"?>
+<recipe id="24641006006067">
 	<!-- Rezeptname -->
 	<title>Lenchen’s Schokoladenkuchen</title>
-	<category id="122" parent="19">
+	<category id="122" parentId="19">
 		<name>Backen</name>
 	</category>
 
