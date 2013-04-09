@@ -238,7 +238,7 @@
 	<xs:element name="comments">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="comment" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -246,22 +246,14 @@
 	<xs:element name="comment">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="commentAuthor">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element type="xs:string" name="name"/>
-							<xs:element ref="avatar"/>
-							<xs:element type="xs:integer" name="userLevel"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
+				<xs:element ref="commentAuthor"/>
 				<xs:element type="xs:dateTime" name="date"/>
 				<xs:element type="xs:boolean" name="isHelpful" default="false"/>
 				<xs:element type="xs:string" name="content"/>
 				<xs:element name="replies" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="comment" minOccurs="0"/>
+							<xs:element name="comment" minOccurs="0" maxOccurs="unbounded"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
@@ -274,7 +266,7 @@
 			<xs:sequence>
 				<xs:element type="xs:string" name="name"/>
 				<xs:element ref="avatar"/>
-				<xs:element type="xs:integer" name="level"/>
+				<xs:element type="xs:integer" name="userLevel"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
