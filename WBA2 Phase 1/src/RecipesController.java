@@ -72,7 +72,7 @@ public class RecipesController {
 	 * Prints names of saved recipes.
 	 */
 	public void showRecipes() {
-		List<Recipe> recipes = (List<Recipe>) this.recipes.getRecipe();
+		List<Recipe> recipes = this.recipes.getRecipe();
 
 		System.out.println( "\nGespeicherte Rezepte:" );
 
@@ -131,7 +131,7 @@ public class RecipesController {
 
 		System.out.println();
 
-		List<Image> images = (List<Image>) recipe.getImages().getImage();
+		List<Image> images = recipe.getImages().getImage();
 		int imagesCount = images.size();
 		int count = 1;
 		for ( Image image : images ) {
@@ -156,16 +156,15 @@ public class RecipesController {
 
 		System.out.println();
 
-		List<Ingredients> _ingredients = recipe.getIngredients();
-		Ingredients ingredients = _ingredients.get(0);
+		List<Ingredient> ingredients = recipe.getIngredients().getIngredient();
 
-		System.out.println( "Zutaten für " + ingredients.getPortions() + " Portionen" );
+		System.out.println( "Zutaten für " + recipe.getIngredients().getPortions() + " Portionen" );
 		System.out.print( "----------------------" );
-		for ( int i = 0; i < ingredients.getPortions().toString().length(); i++ )
+		for ( int i = 0; i < recipe.getIngredients().getPortions().toString().length(); i++ )
 			System.out.print( "-" );
 		System.out.println();
 
-		for ( Ingredient ingredient : ingredients.getIngredient() ) {
+		for ( Ingredient ingredient : ingredients ) {
 			String amount = ingredient.getAmount();
 			String unit = ingredient.getUnit();
 			String name = ingredient.getName();
@@ -213,11 +212,10 @@ public class RecipesController {
 				System.out.println( "Ruhezeit: " + recipe.getDirection().getTimes().getRest() + " Minuten" );
 		}
 
-		List<Steps> _steps = (List<Steps>) recipe.getDirection().getSteps();
-		Steps steps = _steps.get(0);
+		List<String> steps = recipe.getDirection().getSteps().getStep();
 
 		System.out.println();
-		for ( String step : steps.getStep() ) {
+		for ( String step : steps ) {
 			System.out.println( step );
 		}
 
@@ -234,13 +232,12 @@ public class RecipesController {
 
 		System.out.println();
 
-		List<Comments> _comments = recipe.getComments();
-		Comments comments = _comments.get(0);
+		List<Comment> comments = recipe.getComments().getComment();
 
 		System.out.println( "Kommentare" );
 		System.out.println( "----------" );
 
-		for ( Comment comment : comments.getComment() ) {
+		for ( Comment comment : comments ) {
 			Date date = comment.getDate().toGregorianCalendar().getTime();
 
 			System.out.println( comment.getCommentAuthor().getName() + " schrieb am " +  new SimpleDateFormat( "dd.MM.yy HH:mm").format( date ) + ":" );
@@ -290,11 +287,10 @@ public class RecipesController {
 		}
 		comment.setDate( date );
 
-		List<Comments> _comments = recipe.getComments();
-		Comments comments = _comments.get(0);
+		List<Comment> comments = recipe.getComments().getComment();
 
 		// Add the new comment to the recipe
-		comments.getComment().add( comment );
+		comments.add( comment );
 
 		// Save the new recipe
 		this.save();

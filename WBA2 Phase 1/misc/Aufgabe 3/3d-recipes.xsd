@@ -16,9 +16,9 @@
 				<xs:element name="subtitle" type="xs:string" minOccurs="0"/>
 				<xs:element ref="category"/>
 				<xs:element ref="images" minOccurs="0"/>
-				<xs:element ref="ingredients" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ingredients"/>
 				<xs:element ref="direction"/>
-				<xs:element ref="comments" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="comments" minOccurs="0"/>
 			</xs:sequence>
 			<xs:attribute type="xs:integer" name="id"/>
 		</xs:complexType>
@@ -56,7 +56,7 @@
 	<xs:element name="ingredients">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="ingredient" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ingredient" minOccurs="1" maxOccurs="unbounded"/>
 			</xs:sequence>
 			<xs:attribute type="xs:integer" name="portions"/>
 		</xs:complexType>
@@ -201,7 +201,7 @@
 				<xs:element ref="times" minOccurs="0"/>
 				<xs:element ref="severity" minOccurs="0"/>
 				<xs:element type="xs:integer" name="calories" minOccurs="0"/>
-				<xs:element ref="steps" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="steps"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -229,7 +229,7 @@
 	<xs:element name="steps">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element type="xs:string" name="step" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element type="xs:string" name="step" minOccurs="1" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -249,13 +249,6 @@
 				<xs:element type="xs:dateTime" name="date"/>
 				<xs:element type="xs:boolean" name="isHelpful" default="false"/>
 				<xs:element type="xs:string" name="content"/>
-				<xs:element name="replies" minOccurs="0" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="comment" minOccurs="0" maxOccurs="unbounded"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -264,7 +257,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element type="xs:string" name="name"/>
-				<xs:element ref="avatar"/>
+				<xs:element ref="avatar" minOccurs="0"/>
 				<xs:element type="xs:integer" name="userLevel"/>
 			</xs:sequence>
 		</xs:complexType>
