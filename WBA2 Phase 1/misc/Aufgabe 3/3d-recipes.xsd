@@ -20,19 +20,23 @@
 				<xs:element ref="direction"/>
 				<xs:element ref="comments" minOccurs="0"/>
 			</xs:sequence>
-			<xs:attribute type="xs:integer" name="id"/>
+			<xs:attribute ref="id"/>
 		</xs:complexType>
 	</xs:element>
+
+	<xs:attribute type="xs:nonNegativeInteger" name="id"/>
 
 	<xs:element name="category">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element type="xs:string" name="name"/>
 			</xs:sequence>
-			<xs:attribute type="xs:integer" name="id"/>
-			<xs:attribute type="xs:integer" name="parentId" use="optional"/>
+			<xs:attribute ref="id"/>
+			<xs:attribute ref="parentId" use="optional"/>
 		</xs:complexType>
 	</xs:element>
+
+	<xs:attribute type="xs:nonNegativeInteger" name="parentId"/>
 
 	<xs:element name="images">
 		<xs:complexType>
@@ -48,19 +52,31 @@
 				<xs:element type="xs:string" name="author" minOccurs="0"/>
 				<xs:element type="xs:anyURI" name="source"/>
 			</xs:sequence>
-			<xs:attribute type="xs:integer" name="width" use="required"/>
-			<xs:attribute type="xs:integer" name="height" use="required"/>
+			<xs:attribute ref="width" use="required"/>
+			<xs:attribute ref="height" use="required"/>
 		</xs:complexType>
 	</xs:element>
+
+	<xs:attribute type="xs:integer" name="width"/>
+	<xs:attribute type="xs:integer" name="height"/>
 
 	<xs:element name="ingredients">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="ingredient" minOccurs="1" maxOccurs="unbounded"/>
 			</xs:sequence>
-			<xs:attribute type="xs:integer" name="portions"/>
+			<xs:attribute ref="portions"/>
 		</xs:complexType>
 	</xs:element>
+
+	<xs:attribute name="portions">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minExclusive value="0"/>
+				<xs:maxInclusive value="50"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
 
 	<xs:element name="ingredient">
 		<xs:complexType>
@@ -200,18 +216,31 @@
 			<xs:sequence>
 				<xs:element ref="times" minOccurs="0"/>
 				<xs:element ref="severity" minOccurs="0"/>
-				<xs:element type="xs:integer" name="calories" minOccurs="0"/>
+				<xs:element ref="calories" minOccurs="0" />
 				<xs:element ref="steps"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 
+	<xs:element name="calories" default="keine Angabe">
+		<xs:simpleType>
+			<xs:union>
+				<xs:simpleType>
+					<xs:restriction base="xs:nonNegativeInteger"/>
+				</xs:simpleType>
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:union>
+		</xs:simpleType>
+	</xs:element>
+
 	<xs:element name="times">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element type="xs:integer" name="pre" minOccurs="0"/>
-				<xs:element type="xs:integer" name="cook" minOccurs="0"/>
-				<xs:element type="xs:integer" name="rest" minOccurs="0"/>
+				<xs:element type="xs:nonNegativeInteger" name="pre" minOccurs="0"/>
+				<xs:element type="xs:nonNegativeInteger" name="cook" minOccurs="0"/>
+				<xs:element type="xs:nonNegativeInteger" name="rest" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -271,7 +300,6 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-
 
 	<xs:element name="replies">
 		<xs:complexType>
