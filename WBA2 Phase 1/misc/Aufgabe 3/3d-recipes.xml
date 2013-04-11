@@ -60,21 +60,37 @@
 				<date>2012-04-17T09:20:47</date>
 				<isHelpful>true</isHelpful>
 				<content>Kann mir jemand sagen welche Größe die Form bei diesem Rezpet haben muss?</content>
+				<replies>
+					<comment>
+						<commentAuthor>
+							<name>esmiralda83</name>
+							<avatar>
+								<image width="60" height="60">
+									<source>http://static.chefkoch-cdn.de/ck.de/avatar/39a4daaaf3c439939466d8c582de8c18-60fix.jpg</source>
+								</image>
+							</avatar>
+							<userLevel>1</userLevel>
+						</commentAuthor>
+						<date>2012-05-09T11:22:47</date>
+						<isHelpful>false</isHelpful>
+						<content>Ich nehme immer ne 26er Form! Klappt super!</content>
+					</comment>
+				</replies>
 			</comment>
 			<comment>
 				<commentAuthor>
-					<name>esmiralda83</name>
+					<name>klunkerpauli</name>
 					<avatar>
 						<image width="60" height="60">
 							<source>http://static.chefkoch-cdn.de/ck.de/avatar/39a4daaaf3c439939466d8c582de8c18-60fix.jpg</source>
 						</image>
 					</avatar>
-					<userLevel>1</userLevel>
+					<userLevel>6</userLevel>
 				</commentAuthor>
-				<date>2012-05-09T11:22:47</date>
+				<date>2004-03-09T11:22:47</date>
 				<isHelpful>false</isHelpful>
-				<content>Ich nehme immer ne 26er Form! Klappt super!</content>
-				<replies></replies>
+				<content>Der Kuchen ist einfach spitze, ich habe ihn schon mindestens 10 Mal gebacken und immer ist er ratzfatz weg. Man kann sehr gut die Schokoreste von Weihnachten, Ostern etc. verwenden. So schmeckt sie wenigstens der ganzen Family. Ich habe nur etwas mehr Backpulver verwendet, dann wird er lockerer und es stört geschmacklich nicht.
+Viele schoko-Grüße, Heike</content>
 			</comment>
 		</comments>
 	</recipe>

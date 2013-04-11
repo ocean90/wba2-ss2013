@@ -13,7 +13,13 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import jaxbObjects.*;
+import jaxbObjects.Comment;
+import jaxbObjects.CommentAuthor;
+import jaxbObjects.Image;
+import jaxbObjects.Ingredient;
+import jaxbObjects.ObjectFactory;
+import jaxbObjects.Recipe;
+import jaxbObjects.Recipes;
 
 /**
  * Controlls the output of one or more recipe/recipes.
@@ -238,12 +244,29 @@ public class RecipesController {
 		System.out.println( "----------" );
 
 		for ( Comment comment : comments ) {
-			Date date = comment.getDate().toGregorianCalendar().getTime();
+			this.showComment( comment, false );
 
-			System.out.println( comment.getCommentAuthor().getName() + " schrieb am " +  new SimpleDateFormat( "dd.MM.yy HH:mm").format( date ) + ":" );
-			System.out.println( comment.getContent() );
-			System.out.println();
+			if ( null != comment.getReplies() ) {
+				List<Comment> replies = comment.getReplies().getComment();
+				for ( Comment reply : replies ) {
+					this.showComment( reply, true );
+				}
+			}
 		}
+	}
+
+	private void showComment( Comment comment, boolean reply ) {
+		Date date = comment.getDate().toGregorianCalendar().getTime();
+
+
+		System.out.printf(
+			"\n%s%s schrieb am %s:\n%s%s\n",
+			reply ? "\t" : "",
+			comment.getCommentAuthor().getName(),
+			new SimpleDateFormat( "dd.MM.yy HH:mm").format( date ),
+			reply ? "\t" : "",
+			comment.getContent()
+		);
 	}
 
 	/**

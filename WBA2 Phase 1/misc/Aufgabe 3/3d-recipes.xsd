@@ -249,6 +249,7 @@
 				<xs:element type="xs:dateTime" name="date"/>
 				<xs:element type="xs:boolean" name="isHelpful" default="false"/>
 				<xs:element type="xs:string" name="content"/>
+				<xs:element ref="replies" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -267,6 +268,15 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="image"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:element name="replies">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="comment" minOccurs="1" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
