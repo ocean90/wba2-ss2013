@@ -1,54 +1,118 @@
-import java.io.FileNotFoundException;
-import java.util.InputMismatchException;
+import java.util.Scanner;
 
-import javax.xml.bind.JAXBException;
-
-
+/**
+ * Program to print and comment recipes
+ *
+ * @author Dominik Schilling
+ */
 public class RecipesMain {
 
+	private static final Scanner in = new Scanner( System.in );
+
+	private static RecipesController controller = null;
+
+	private static boolean _firstRun = true;
+
+	private static String RECIPES_XML = "Aufgabe 3/3d-recipes.xml";
 
 	/**
+	 * Main.
+	 *
 	 * @param args
-	 * @throws JAXBException
-	 * @throws FileNotFoundException
 	 */
 	public static void main(String[] args) {
-		RecipesController controller = null;
-
+		// Controller instance
 		try {
-			controller = new RecipesController( "Aufgabe 3/3d-recipes.xml" );
-		} catch (FileNotFoundException e1) {
-			p( "Fehler!\n" );
-			e1.printStackTrace();
-			System.exit(1);
-		} catch (JAXBException e1) {
-			p( "Fehler!\n" );
+			controller = new RecipesController( RECIPES_XML );
+		} catch (Exception e1) {
+			System.err.println( "Fehler!\n" );
 			e1.printStackTrace();
 			System.exit(1);
 		}
 
+		// Print and handle user input
 		int input = -1;
-		try {
-			input = controller.request();
-		} catch( InputMismatchException e ) {
-			p( "Falsche Eingabe!\n" );
-			System.exit(1);
-		}
+		do {
+			input = request();
+			handleRequest( input );
+		} while( 0 != input );
 
-		switch( input ) {
+	}
+
+	/**
+	 * Prints the user request form.
+	 *
+	 * @return User input
+	 */
+	public static int request() {
+
+		if ( _firstRun ) {
+			System.out.println( "Rezepte von Chefkoch.de" );
+			System.out.println( "=======================" );
+			_firstRun = false;
+		}
+		System.out.println();
+		System.out.println( "Bitte wählen Sie aus:" );
+		System.out.println( "\t1 - Rezeptübersicht anzeigen" );
+		System.out.println( "\t2 - Rezept anzeigen" );
+		System.out.println( "\t3 - Rezept kommentieren" );
+		System.out.println( "\t0 - Beenden" );
+
+		System.out.print( "Eingabe: " );
+		return in.nextInt();
+	}
+
+	/**
+	 * Handles user input
+	 *
+	 * @param id User input
+	 */
+	private static void handleRequest( int id ) {
+		boolean success;
+
+		switch( id ) {
+			// Exit
 			case 0:
-				System.exit(1);
+				System.out.println( "\nProgramm wurde beendet." );
 				break;
+			// List recipes
 			case 1:
 				controller.showRecipes();
 				break;
+			// Print recipe
+			case 2:
+				success = false;
+				do {
+					System.out.print( "Rezeptnummer eingeben: " );
+					int rezeptNummer = in.nextInt() - 1;
+
+					if ( rezeptNummer < 0 || rezeptNummer > controller.getRecipes().size() ) {
+						System.out.println();
+						System.err.println( "Rezept nicht vorhanden." );
+						success = false;
+					} else {
+						controller.showRecipe( rezeptNummer );
+						success = true;
+					}
+				} while ( ! success );
+				break;
+			// Comment recipe
+			case 3:
+				success = false;
+				do {
+					System.out.print( "Rezeptnummer eingeben: " );
+					int rezeptNummer = in.nextInt() - 1;
+
+					if ( rezeptNummer < 0 || rezeptNummer > controller.getRecipes().size() ) {
+						System.out.println();
+						System.err.println( "Rezept nicht vorhanden." );
+						success = false;
+					} else {
+						controller.commentRecipe( rezeptNummer );
+						success = true;
+					}
+				} while ( ! success );
+				break;
 		}
-
 	}
-
-
-	public static void p( Object output ) {
-		System.out.println( output );
-	}
-
 }

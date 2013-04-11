@@ -16,7 +16,7 @@
 				<xs:element name="subtitle" type="xs:string" minOccurs="0"/>
 				<xs:element ref="category"/>
 				<xs:element ref="images" minOccurs="0"/>
-				<xs:element ref="ingredients" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="ingredients" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="direction"/>
 				<xs:element ref="comments" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
@@ -90,7 +90,6 @@
 	<xs:attribute name="unit" default="">
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value=""/>
 				<xs:enumeration value=""/>
 				<xs:enumeration value="Becher"/>
 				<xs:enumeration value="Beutel"/>
@@ -250,7 +249,7 @@
 				<xs:element type="xs:dateTime" name="date"/>
 				<xs:element type="xs:boolean" name="isHelpful" default="false"/>
 				<xs:element type="xs:string" name="content"/>
-				<xs:element name="replies" minOccurs="0">
+				<xs:element name="replies" minOccurs="0" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="comment" minOccurs="0" maxOccurs="unbounded"/>

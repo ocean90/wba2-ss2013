@@ -20,9 +20,9 @@
 	<!-- Zutaten -->
 	<ingredients portions="integer">
 		<ingredient>
-			<name></name>
-			<amount></amount>
-			<unit></unit>
+			<name>Zucker</name>
+			<amount>100</amount>
+			<unit>L</unit>
 		</ingredient>
 	</ingredients>
 	<!-- Zubereitung -->
