@@ -7,27 +7,27 @@
 			<contact>
 				<mail>max.musterman@example.com</mail>
 			</contact>
-			<experience>2</experience>
+			<experience>3</experience>
 			<hasDrum>true</hasDrum>
-			<notes>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</notes>
+			<notes>Lorem ipsum dolor sit amet, consetetur sadipscing elitr magna aliquyam.</notes>
 		</leader>
 		<members>
-			<member id="0">
+			<member>
 				<firstname>Felix</firstname>
 				<lastname>Meier</lastname>
 				<contact>
 					<mail>felix@example.com</mail>
 				</contact>
 				<experience>1</experience>
-				<hasDrum>true</hasDrum>
+				<hasDrum>false</hasDrum>
 			</member>
-			<member id="2">
+			<member>
 				<firstname>Anna</firstname>
 				<lastname>Becker</lastname>
 				<contact>
 					<mail>annabecker@example.com</mail>
 				</contact>
-				<experience>1</experience>
+				<experience>2</experience>
 				<hasDrum>true</hasDrum>
 			</member>
 		</members>

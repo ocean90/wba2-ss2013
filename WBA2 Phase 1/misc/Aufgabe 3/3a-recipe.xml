@@ -1,81 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<recipe id="integer">
+<recipe id="Integer">
+
 	<!-- Rezeptname -->
-	<title></title>
-	<category id="" parentId="">
-		<name></name>
+	<title>String</title>
+	<category id="Integer" parentId="Integer">
+		<name>String</name>
 	</category>
+
 	<!-- Fotos -->
 	<images>
 		<image>
-			<title></title>
-			<author></author>
-			<source></source>
+			<title>String</title>
+			<author>String</author>
+			<source>String</source>
 			<size>
-				<height></height>
-				<width></width>
+				<height>Integer</height>
+				<width>Integer</width>
 			</size>
 		</image>
 	</images>
+
 	<!-- Zutaten -->
-	<ingredients portions="integer">
+	<ingredients portions="Integer">
 		<ingredient>
-			<name>Zucker</name>
-			<amount>100</amount>
-			<unit>L</unit>
+			<name>String</name>
+			<amount>Integer</amount>
+			<unit>String</unit>
 		</ingredient>
 	</ingredients>
+
 	<!-- Zubereitung -->
 	<direction>
 		<times>
-			<pre></pre>
-			<cook></cook>
+			<pre>Integer</pre>
+			<cook>Integer</cook>
 		</times>
-		<severity></severity>
-		<calories></calories>
-		<description></description>
+		<severity>String</severity>
+		<calories>Integer</calories>
+		<description>String</description>
 	</direction>
+
 	<!-- Kommentare -->
 	<comments>
 		<comment>
 			<author>
-				<name></name>
+				<name>String</name>
 				<avatar>
 					<image>
-						<source></source>
+						<source>String</source>
 						<size>
-							<height></height>
-							<width></width>
+							<height>Integer</height>
+							<width>Integer</width>
 						</size>
 					</image>
 				</avatar>
-				<level></level>
+				<level>Integer</level>
 			</author>
-			<date></date>
-			<isHelpful></isHelpful>
-			<content></content>
-			<!-- Verschachtelte Kommentare -->
-			<replies>
-				<comment>
-					<author>
-						<name></name>
-						<avatar>
-							<image>
-								<source></source>
-								<size>
-									<height></height>
-									<width></width>
-								</size>
-							</image>
-						</avatar>
-						<level></level>
-					</author>
-					<date></date>
-					<isHelpful></isHelpful>
-					<content></content>
-					<replies></replies>
-				</comment>
-			</replies>
+			<date>DateTime</date>
+			<isHelpful>Boolean</isHelpful>
+			<content>String</content>
 		</comment>
 	</comments>
+
 </recipe>

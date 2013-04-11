@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <recipe id="24641006006067">
+
 	<!-- Rezeptname -->
 	<title>Lenchen’s Schokoladenkuchen</title>
 	<category id="122" parentId="19">
@@ -95,28 +96,25 @@
 			<date>2012-04-17T09:20:47</date>
 			<isHelpful>true</isHelpful>
 			<content>Kann mir jemand sagen welche Größe die Form bei diesem Rezpet haben muss?</content>
-			<!-- Verschachtelte Kommentare -->
-			<replies>
-				<comment>
-					<author>
-						<name>esmiralda83</name>
-						<avatar>
-							<image>
-								<source>http://static.chefkoch-cdn.de/ck.de/avatar/39a4daaaf3c439939466d8c582de8c18-60fix.jpg</source>
-								<size>
-									<height>60</height>
-									<width>60</width>
-								</size>
-							</image>
-						</avatar>
-						<level>1</level>
-					</author>
-					<date>2012-05-09T11:22:47</date>
-					<isHelpful>false</isHelpful>
-					<content>Ich nehme immer ne 26er Form! Klappt super!</content>
-					<replies></replies>
-				</comment>
-			</replies>
+		</comment>
+		<comment>
+			<author>
+				<name>esmiralda83</name>
+				<avatar>
+					<image>
+						<source>http://static.chefkoch-cdn.de/ck.de/avatar/39a4daaaf3c439939466d8c582de8c18-60fix.jpg</source>
+						<size>
+							<height>60</height>
+							<width>60</width>
+						</size>
+					</image>
+				</avatar>
+				<level>3</level>
+			</author>
+			<date>2012-05-09T11:22:47</date>
+			<isHelpful>false</isHelpful>
+			<content>Ich nehme immer ne 26er Form! Klappt super!</content>
 		</comment>
 	</comments>
+
 </recipe>

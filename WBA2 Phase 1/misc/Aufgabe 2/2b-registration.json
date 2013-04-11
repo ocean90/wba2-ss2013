@@ -1,31 +1,30 @@
 {
-	"registration":{
-		"group":{
-			"leader":{
-				"firstname":"",
-				"lastname":"",
-				"contact":{
-					"mail":""
+	"registration": {
+		"group": {
+			"leader": {
+				"firstname": "",
+				"lastname": "",
+				"contact": {
+					"mail": ""
 				},
-				"experience":0,
-				"hasDrum":false,
-				"notes":""
+				"experience": 0,
+				"hasDrum": false,
+				"notes": ""
 			},
-			"members":{
-				"member":[
+			"members": {
+				"member": [
 					{
-						"id":0,
-						"firstname":"",
-						"lastname":"",
-						"contact":{
-							"mail":""
+						"firstname": "",
+						"lastname": "",
+						"contact": {
+							"mail": ""
 						},
-						"experience":0,
-						"hasDrum":false
+						"experience": 0,
+						"hasDrum": false
 					}
 				]
 			}
 		},
-		"AGBaccepted":false
+		"AGBaccepted": false
 	}
 }

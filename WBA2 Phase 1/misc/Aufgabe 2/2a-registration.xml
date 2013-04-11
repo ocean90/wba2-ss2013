@@ -2,26 +2,26 @@
 <registration>
 	<group>
 		<leader>
-			<firstname></firstname>
-			<lastname></lastname>
+			<firstname>String</firstname>
+			<lastname>String</lastname>
 			<contact>
-				<mail></mail>
+				<mail>String</mail>
 			</contact>
-			<experience></experience>
-			<hasDrum></hasDrum>
-			<notes></notes>
+			<experience>String</experience>
+			<hasDrum>Boolean</hasDrum>
+			<notes>String</notes>
 		</leader>
 		<members>
-			<member id="integer">
-				<firstname></firstname>
-				<lastname></lastname>
+			<member>
+				<firstname>String</firstname>
+				<lastname>String</lastname>
 				<contact>
-					<mail></mail>
+					<mail>String</mail>
 				</contact>
-				<experience></experience>
-				<hasDrum></hasDrum>
+				<experience>Integer</experience>
+				<hasDrum>Boolean</hasDrum>
 			</member>
 		</members>
 	</group>
-	<AGBaccepted></AGBaccepted>
+	<AGBaccepted>Boolean</AGBaccepted>
 </registration>

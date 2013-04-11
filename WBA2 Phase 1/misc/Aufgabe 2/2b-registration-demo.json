@@ -1,41 +1,39 @@
 {
-	"registration":{
-		"group":{
-			"leader":{
-				"firstname":"Max",
-				"lastname":"Mustermann",
-				"contact":{
-					"mail":"max.musterman@example.com"
+	"registration": {
+		"group": {
+			"leader": {
+				"firstname": "Max",
+				"lastname": "Mustermann",
+				"contact": {
+					"mail": "max.musterman@example.com"
 				},
-				"experience":"2",
-				"hasDrum":"true",
-				"notes":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
+				"experience": 3,
+				"hasDrum": true,
+				"notes": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr magna aliquyam."
 			},
-			"members":{
-				"member":[
+			"members": {
+				"member": [
 					{
-						"id":"0",
-						"firstname":"Felix",
-						"lastname":"Meier",
-						"contact":{
-							"mail":"felix@example.com"
+						"firstname": "Felix",
+						"lastname": "Meier",
+						"contact": {
+							"mail": "felix@example.com"
 						},
-						"experience":"1",
-						"hasDrum":"true"
+						"experience": 1,
+						"hasDrum": false
 					},
 					{
-						"-id":"2",
-						"firstname":"Anna",
-						"lastname":"Becker",
+						"firstname": "Anna",
+						"lastname": "Becker",
 						"contact":{
-							"mail":"annabecker@example.com"
+							"mail": "annabecker@example.com"
 						},
-						"experience":"1",
-						"hasDrum":"true"
+						"experience": 2,
+						"hasDrum": true
 					}
 				]
 			}
 		},
-		"AGBaccepted":"true"
+		"AGBaccepted": true
 	}
 }
