@@ -13,7 +13,7 @@ public class RecipesMain {
 
 	private static boolean _firstRun = true;
 
-	private static String RECIPES_XML = "Aufgabe 3/3d-recipes.xml";
+	private static final String RECIPES_XML = "misc/Aufgabe 3/3d-recipes.xml";
 
 	/**
 	 * Main.

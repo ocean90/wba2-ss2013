@@ -28,6 +28,8 @@ public class RecipesController {
 	private Marshaller marshaller;
 	private Recipes recipes;
 
+	private static final String RECIPES_XML_OUTPUT = "misc/Aufgabe 4/4c-recipes.xml";
+
 	/**
 	 * Constructor
 	 *
@@ -305,7 +307,7 @@ public class RecipesController {
 	 */
 	private void save() {
 		try {
-			this.marshaller.marshal( this.recipes, new File( "Aufgabe 4/4c-recipes.xml" ) );
+			this.marshaller.marshal( this.recipes, new File( RECIPES_XML_OUTPUT ) );
 		} catch ( JAXBException e ) {
 			e.printStackTrace();
 		}
