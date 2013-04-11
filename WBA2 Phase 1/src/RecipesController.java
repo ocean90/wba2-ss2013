@@ -49,6 +49,7 @@ public class RecipesController {
 
 		this.unMarshaller = jaxbContext.createUnmarshaller(); // Reading
 		this.marshaller   = jaxbContext.createMarshaller(); // Writing
+		this.marshaller.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, true );
 		this.recipes = (Recipes) unMarshaller.unmarshal( new File( file ) );
 	}
 
