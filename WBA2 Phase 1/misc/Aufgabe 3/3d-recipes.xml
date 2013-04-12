@@ -30,8 +30,8 @@
 		</ingredients>
 		<direction>
 			<times>
-				<pre>60</pre>
-				<cook>50</cook>
+				<pre minutes="60"/>
+				<cook minutes="50"/>
 			</times>
 			<severity>normal</severity>
 			<calories>295</calories>
@@ -124,8 +124,8 @@ Viele schoko-Grüße, Heike</content>
 		</ingredients>
 		<direction>
 			<times>
-				<pre>20</pre>
-				<cook>20</cook>
+				<pre minutes="20"/>
+				<cook minutes="20"/>
 			</times>
 			<severity>normal</severity>
 			<calories>0</calories>

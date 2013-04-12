@@ -16,18 +16,18 @@
             </image>
         </images>
         <ingredients portions="16">
-            <ingredient name="Butter" amount="200" unit="g"></ingredient>
-            <ingredient name="Zucker" amount="200" unit="g"></ingredient>
-            <ingredient name="Schokolade, Blockschokolade" amount="200" unit="g"></ingredient>
-            <ingredient name="Mehl" amount="120" unit="g"></ingredient>
-            <ingredient name="Backpulver" amount="0.5" unit="TL"></ingredient>
-            <ingredient name="Vanillezucker" amount="1" unit="Pkt."></ingredient>
-            <ingredient name="Ei(er)" amount="4"></ingredient>
+            <ingredient name="Butter" amount="200" unit="g"/>
+            <ingredient name="Zucker" amount="200" unit="g"/>
+            <ingredient name="Schokolade, Blockschokolade" amount="200" unit="g"/>
+            <ingredient name="Mehl" amount="120" unit="g"/>
+            <ingredient name="Backpulver" amount="0.5" unit="TL"/>
+            <ingredient name="Vanillezucker" amount="1" unit="Pkt."/>
+            <ingredient name="Ei(er)" amount="4"/>
         </ingredients>
         <direction>
             <times>
-                <pre>60</pre>
-                <cook>50</cook>
+                <pre minutes="60"/>
+                <cook minutes="50"/>
             </times>
             <severity>normal</severity>
             <calories>295</calories>
@@ -107,21 +107,21 @@ Viele schoko-Grüße, Heike</content>
             </image>
         </images>
         <ingredients portions="4">
-            <ingredient name="Möhre(n)" amount="800" unit="g"></ingredient>
-            <ingredient name="Zucker" amount="1" unit="TL"></ingredient>
-            <ingredient name="Petersilie" amount="3" unit="Bund"></ingredient>
-            <ingredient name="Butter" amount="100" unit="g"></ingredient>
-            <ingredient name="Mehl" amount="6" unit="EL"></ingredient>
-            <ingredient name="Weißwein" amount="200" unit="ml"></ingredient>
-            <ingredient name="Ei(er)" amount="4"></ingredient>
-            <ingredient name="Sahne" amount="200" unit="ml"></ingredient>
-            <ingredient name="Muskat"></ingredient>
-            <ingredient name="Salz und Pfeffer"></ingredient>
+            <ingredient name="Möhre(n)" amount="800" unit="g"/>
+            <ingredient name="Zucker" amount="1" unit="TL"/>
+            <ingredient name="Petersilie" amount="3" unit="Bund"/>
+            <ingredient name="Butter" amount="100" unit="g"/>
+            <ingredient name="Mehl" amount="6" unit="EL"/>
+            <ingredient name="Weißwein" amount="200" unit="ml"/>
+            <ingredient name="Ei(er)" amount="4"/>
+            <ingredient name="Sahne" amount="200" unit="ml"/>
+            <ingredient name="Muskat"/>
+            <ingredient name="Salz und Pfeffer"/>
         </ingredients>
         <direction>
             <times>
-                <pre>20</pre>
-                <cook>20</cook>
+                <pre minutes="20"/>
+                <cook minutes="20"/>
             </times>
             <severity>normal</severity>
             <calories>0</calories>
@@ -173,9 +173,9 @@ lukasmama</content>
                 <commentAuthor>
                     <name>Peter</name>
                 </commentAuthor>
-                <date>2013-04-12T01:18:22.164+02:00</date>
+                <date>2013-04-12T16:20:14.977+02:00</date>
                 <isHelpful>false</isHelpful>
-                <content>Schmeckt sehr gut!</content>
+                <content>Schmeckt lecker!</content>
             </comment>
         </comments>
     </recipe>

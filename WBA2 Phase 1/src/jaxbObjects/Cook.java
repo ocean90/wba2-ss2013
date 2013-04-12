@@ -10,6 +10,7 @@ package jaxbObjects;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -23,11 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}pre" minOccurs="0"/>
- *         &lt;element ref="{}cook" minOccurs="0"/>
- *         &lt;element ref="{}rest" minOccurs="0"/>
- *       &lt;/sequence>
+ *       &lt;attribute ref="{}minutes"/>
+ *       &lt;attribute ref="{}hours"/>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -36,88 +34,61 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "pre",
-    "cook",
-    "rest"
-})
-@XmlRootElement(name = "times")
-public class Times {
+@XmlType(name = "")
+@XmlRootElement(name = "cook")
+public class Cook {
 
-    protected Pre pre;
-    protected Cook cook;
-    protected Rest rest;
+    @XmlAttribute
+    protected Integer minutes;
+    @XmlAttribute
+    protected Integer hours;
 
     /**
-     * Gets the value of the pre property.
+     * Gets the value of the minutes property.
      * 
      * @return
      *     possible object is
-     *     {@link Pre }
+     *     {@link Integer }
      *     
      */
-    public Pre getPre() {
-        return pre;
+    public Integer getMinutes() {
+        return minutes;
     }
 
     /**
-     * Sets the value of the pre property.
+     * Sets the value of the minutes property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Pre }
+     *     {@link Integer }
      *     
      */
-    public void setPre(Pre value) {
-        this.pre = value;
+    public void setMinutes(Integer value) {
+        this.minutes = value;
     }
 
     /**
-     * Gets the value of the cook property.
+     * Gets the value of the hours property.
      * 
      * @return
      *     possible object is
-     *     {@link Cook }
+     *     {@link Integer }
      *     
      */
-    public Cook getCook() {
-        return cook;
+    public Integer getHours() {
+        return hours;
     }
 
     /**
-     * Sets the value of the cook property.
+     * Sets the value of the hours property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Cook }
+     *     {@link Integer }
      *     
      */
-    public void setCook(Cook value) {
-        this.cook = value;
-    }
-
-    /**
-     * Gets the value of the rest property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Rest }
-     *     
-     */
-    public Rest getRest() {
-        return rest;
-    }
-
-    /**
-     * Sets the value of the rest property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Rest }
-     *     
-     */
-    public void setRest(Rest value) {
-        this.rest = value;
+    public void setHours(Integer value) {
+        this.hours = value;
     }
 
 }

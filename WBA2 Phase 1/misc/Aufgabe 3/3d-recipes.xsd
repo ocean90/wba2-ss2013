@@ -80,13 +80,9 @@
 
 	<xs:element name="ingredient">
 		<xs:complexType>
-			<xs:simpleContent>
-				<xs:extension base="xs:string">
-					<xs:attribute type="xs:string" name="name" use="required"/>
-					<xs:attribute ref="amount" use="optional"/>
-					<xs:attribute ref="unit" use="optional"/>
-				</xs:extension>
-			</xs:simpleContent>
+			<xs:attribute type="xs:string" name="name" use="required"/>
+			<xs:attribute ref="amount" use="optional"/>
+			<xs:attribute ref="unit" use="optional"/>
 		</xs:complexType>
 	</xs:element>
 
@@ -238,12 +234,61 @@
 	<xs:element name="times">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element type="xs:positiveInteger" name="pre" minOccurs="0"/>
-				<xs:element type="xs:positiveInteger" name="cook" minOccurs="0"/>
-				<xs:element type="xs:positiveInteger" name="rest" minOccurs="0"/>
+				<xs:element ref="pre" minOccurs="0"/>
+				<xs:element ref="cook" minOccurs="0"/>
+				<xs:element ref="rest" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
+	<xs:element name="pre">
+		<xs:complexType>
+			<xs:attribute ref="minutes"/>
+			<xs:attribute ref="hours" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="cook">
+		<xs:complexType>
+			<xs:attribute ref="minutes"/>
+			<xs:attribute ref="hours" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="rest">
+		<xs:complexType>
+			<xs:attribute ref="minutes"/>
+			<xs:attribute ref="hours" use="optional"/>
+			<xs:attribute ref="days" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:attribute name="minutes">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minExclusive value="0"/>
+				<xs:maxInclusive value="60"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+
+	<xs:attribute name="hours">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minExclusive value="0"/>
+				<xs:maxInclusive value="24"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+
+	<xs:attribute name="days">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:minExclusive value="0"/>
+				<xs:maxInclusive value="356"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
 
 	<xs:element name="severity">
 		<xs:simpleType>

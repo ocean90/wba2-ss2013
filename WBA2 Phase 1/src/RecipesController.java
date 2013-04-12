@@ -209,14 +209,44 @@ public class RecipesController {
 		}
 
 		if ( null != recipe.getDirection().getTimes() ) {
-			if ( null != recipe.getDirection().getTimes().getPre() )
-				System.out.println( "Vorbereitungszeit: " + recipe.getDirection().getTimes().getPre() + " Minuten" );
+			if ( null != recipe.getDirection().getTimes().getPre() ) {
+				System.out.print( "\nVorbereitungszeit: " );
 
-			if ( null != recipe.getDirection().getTimes().getCook() )
-				System.out.println( "Koch-/Backzeit: " + recipe.getDirection().getTimes().getCook() + " Minuten" );
+				if( null != recipe.getDirection().getTimes().getPre().getHours() )
+					System.out.print( recipe.getDirection().getTimes().getPre().getHours() + " Std. " );
 
-			if ( null != recipe.getDirection().getTimes().getRest() )
-				System.out.println( "Ruhezeit: " + recipe.getDirection().getTimes().getRest() + " Minuten" );
+				if( null != recipe.getDirection().getTimes().getPre().getMinutes() )
+					System.out.print( recipe.getDirection().getTimes().getPre().getMinutes() + " Min." );
+
+				System.out.println();
+			}
+
+			if ( null != recipe.getDirection().getTimes().getCook() ) {
+				System.out.print( "Koch-/Backzeit: " );
+
+				if( null != recipe.getDirection().getTimes().getCook().getHours() )
+					System.out.print( recipe.getDirection().getTimes().getCook().getHours() + " Std. " );
+
+				if( null != recipe.getDirection().getTimes().getCook().getMinutes() )
+					System.out.print( recipe.getDirection().getTimes().getCook().getMinutes() + " Min." );
+
+				System.out.println();
+			}
+
+			if ( null != recipe.getDirection().getTimes().getRest() ) {
+				System.out.print( "Ruhezeit: " );
+
+				if( null != recipe.getDirection().getTimes().getRest().getDays() )
+					System.out.print( recipe.getDirection().getTimes().getRest().getDays() + " Tage " );
+
+				if( null != recipe.getDirection().getTimes().getRest().getHours() )
+					System.out.print( recipe.getDirection().getTimes().getCook().getHours() + " Std. " );
+
+				if( null != recipe.getDirection().getTimes().getRest().getMinutes() )
+					System.out.print( recipe.getDirection().getTimes().getRest().getMinutes() + " Min." );
+
+				System.out.println();
+			}
 		}
 
 		List<String> steps = recipe.getDirection().getSteps().getStep();
