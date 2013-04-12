@@ -1,7 +1,7 @@
 # Web-basierte Anwendungen 2 - Verteilte Systeme
 
 ## Dokumentation zur Phase 1
-Autor: Dominik Schilling
+ausgearbeitet von Dominik Schilling, 4. Semester, SS'13
 
 ## Inhaltsverzeichnis
 
@@ -94,6 +94,15 @@ Source:
 * [`/misc/Aufgabe 2/2a-registration.xml`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%202/2a-registration.xml)
 * [`/misc/Aufgabe 2/2a-registration-demo.xml`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%202/2a-registration.xml)
 
+Erläuterungen:
+
+Das Formular kann zwei Personengruppen aufnehmen: Einmal den obligatorischen Gruppenleiter, sowie mindenstens ein Mitglied.  
+Der Gruppenleiter bildet sich aus dem Vornamen (String), Nachnamen (String), Kontaktaddresse (String), Erfahrung (Integer), Vorhandensein eines Schlagzeugs (Boolean) sowie ein Feld für Anmerkungen (String).
+Ein Gruppenmitglied ist wie der Gruppenleiter aufgebaut, hat allerdings kein Feld für Anmerkungen.  
+Für das Feld Erfahrung wurde als Typ _Integer_ gewählt, da es 4 vordefinierte Werte gibt. Bei der Datenübertragung ist dann nur noch der _Key_ von Bedeutung, da dieser in der Regel dann intern verarbeitet wird. Selbes gilt für das Schlagzeug, nur dass der Typ _Boolean_ genutzt wurde, da es nur zwei Zustände gibt _wahr_ (vorhanden) oder _falsch_ (nicht vorhanden).  
+Neben den beiden Personengruppen wird nur ein weiteres Feld aufgenommen. Es handelt sich um die Checkbox für die AGBs. Hier wurde ebenfalls der _Boolean_ Typ gewählt.
+
+
 _**b)** Erzeugen Sie ein JSON-Dokument, dass zu ihrem XML-Dokument äquivalent ist._
 
 Source:
@@ -154,44 +163,67 @@ Eine Übersicht der eingebauten Datentypen ist der XML Spezifikation zu entnehme
 http://www.w3.org/TR/xmlschema-2/#built-in-datatypes (aufgerufen am 11.04.2013)
 
 
-Mit dieser Erkenntnis können nun folgende Annahmen bezüglich des Rezeptes gemacht werden:
+Mit dieser Erkenntnis können nun folgende Annahmen/Entscheidungen bezüglich des Rezeptes und dessen XML-Schema gemacht werden:
 
-* Attribut: **id**: Simple-Type, Type: Integer
-* Attribut: **parentId**: Simple-Type, Type: Integer, optional
-* Attribut: **amount**: Simple-Type, optional, Type: Float, Integer
-* Attribut: **unit**: Simple-Type, optional, Type: String
-  * Enumeration (TL, EL, Prise, ... ), Standard: ""
-* Attribut: **width**: Simple-Type, Type: Integer, Required
-* Attribut: **height**: Simple-Type, Type: Integer, Required
-* Element: **recipes**: Complex-Type (Wurzelelement)
-* Element: **recipe**: Complex-Type, 
-* Element: **title**: Simple-Type, Type: String
-* Element: **subtitle**: Simple-Type, Type: String
-* Element: **category**: Complex-Type
-* Element: **images**: Complex-Type, optional
-* Element: **direction**: Complex-Type
-* Element: **comments**: Complex-Type, optional
-* Element: **comment**: Complex-Type, Unbegrenzt
-* Element: **name**: Simple-Type, Type: String
-* Element: **image**: Complex-Type, optional
-* Element: **ingredients**: Complex-Type
-* Element: **ingredient**: Complex-Type, Unbegrenzt
-* Element: **times**: Complex-Type
-* Element: **severity**: Complex-Type, Type: String
+Da in dem XML-Dokument mehrere Rezepte gespeichert werden sollen, dient das Element `<recipes>` als Wurzelelement. Das Element selbst ist ein Complex-Type, da es mindestens (_minOccurs_) ein Rezept als Kindelement besitzen soll. Die maximale Anzahl (_maxOccurs_) ist umbegrenzt (_unbounded_).  
+Ein Rezept wird im Element `<recipe>` widergespiegelt. Ebenfalls vom Type Complex-Type, da es aus den folgenden Kindelementen bestehen kann/muss:
+
+* `<title>`: Für den Titel des Rezeptes. Typ: String
+* `<subtitle>`: Für eine/n optionale/n Beschreibung/Untertitel des Rezeptes. Typ: String
+* `<category>`: Annahme: Jedes Rezept wird einer Kategorie untergeordnet. Die Kategorie selbst kann aber eine Unterkategorie sein. Aus diesem Grund ein Complex-Type.
+* `<images>`: Für optionale Fotos von Usern. Jedes Bild benötigt die Source, sowie den Namen des Uploaders - Complex-Type.
+* `<ingredients>`: Wird als Elternelement für die einzelen Zutaten verwendet - Complex-Type.
+* `<direction>`: Umfasst die einzelnen Elemente für die Zubereitung - Complex-Type.
+* `<comments>`: Für optinale Kommentare, die dem Rezept hinzugefügt werden können - Complex-Type
+
+Wie bekannt ist, bestehen Complex-Types aus weiteren Kindelemente bzw. Attribute. Im folgenden werden diese aufgeschlüsselt:
+
+Complex-Types:
+
+* Element: **comment**: Kindelement von `<comments>` und `<replies>`, Unbegrenzt
+* Element: **image**: Kindelement von `<avatar>` und `<images>`
+* Element: **times**: Kindelement von `<direction>`
+* Element: **ingredient**: Kindelement von `<ingredients>`, Unbegrenzt
+* Element: **replies**: Kindelement von `<comment>`, optional
+* Element: **avatar**: Kindelement von `<comment>`, optional
+* Element: **steps**: Kindelement von `<direction>`
+* Element: **commentAuthor**: Kindelement von `<comment>`
+* Element: **pre**: Kindelement von `<times>`
+* Element: **cook**: Kindelement von `<times>`
+* Element: **rest**: Kindelement von `<times>`
+
+Simple-Types:
+
+* Element: **name**: Kindelement von `<commentAuthor>`, `category`, Type: String
+* Element: **severity**: Kindelement von `<direction>`, Type: String
   * Enumeration( simple, normal, pfiffig )
-* Element: **pre**: Simple-Type, Type: Integer, optional
-* Element: **cook**: Simple-Type, Type: Integer, optional
-* Element: **rest**: Simple-Type, Type: Integer, optional
-* Element: **steps**: Complex-Type
-* Element: **step**: Simple-Type, Type: String, Unbegrenzt
-* Element: **date**: Simple-Type, Type: dateTime
-* Element: **isHelpful**: Simple-Type, Type: boolean
-* Element: **content**: Simple-Type, Type: String
-* Element: **replies**: Complex-Type, optional
-* Element: **userLevel**: Simple-Type, Type: Integer
-* Element: **avatar**: Complex-Type, optional
-* Element: **author**: Simple-Type, Type: String
-* Element: **source**: Simple-Type, Type: xs:anyURI
+* Element: **step**: Kindelement von `<steps>` (unbegrenzt), Type: String
+* Element: **date**: Kindelement von `<comment>`, Type: dateTime
+* Element: **isHelpful**: Kindelement von `<comment>`, Type: boolean
+* Element: **content**: Kindelement von `<comment>`, Type: String
+* Element: **userLevel**: Kindelement von `<commentAuthor>`, Type: Integer
+* Element: **author**: Kindelement von `<image>` (optional), Type: String,
+* Element: **source**: Kindelement von `<image>`, Type: xs:anyURI
+* Element: **calories**: Kindelement von `<direction>`, Type: String, positiveInteger, Default: "keine Angabe"
+
+Attribute:
+
+* **id**: Für `<category>`, `<recipe>`, Type: Integer
+* **parentId**: Für `<category>` (optional), Typ: Integer,
+* **amount**: Für `<ingredient>` (optional), Typ: Float, Integer
+* **unit**: Für `<ingredient>` (optional), Typ: String
+  * Enumeration (TL, EL, Prise, ... ), Standard: ""
+* **name**: Für `<ingredient>`, Typ: String
+* **width**: Für `<image>`, Typ: Integer
+* **height**: Für `<image>`, Typ: Integer
+  * Minimum: 0
+* **minutes**: Für `<pre>`, `<rest>`, `<cook>`, Typ: Integer
+  * Minimum: 0, Maximum: 60
+* **hours**: Für `<pre>`, `<rest>`, `<cook>`, Typ: Integer
+  * Minimum: 0,  Maximum: 24
+* **days**: Für `<rest>`, Typ: Integer
+  * Minimum: 0, Maximum: 356
+
 
 ----
 
