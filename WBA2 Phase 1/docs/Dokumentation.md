@@ -107,8 +107,8 @@ _**b)** Erzeugen Sie ein JSON-Dokument, dass zu ihrem XML-Dokument äquivalent i
 
 Source:
 
-* [`/misc/Aufgabe 2/2a-registration.json`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%202/2a-registration.json)
-* [`/misc/Aufgabe 2/2a-registration-demo.json`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%202/2a-registration.json)
+* [`/misc/Aufgabe 2/2a-registration.json`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%202/2b-registration.json)
+* [`/misc/Aufgabe 2/2a-registration-demo.json`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%202/2b-registration.json)
 
 <a href="#inhaltsverzeichnis">zur Übersicht ⇑</a>
 
