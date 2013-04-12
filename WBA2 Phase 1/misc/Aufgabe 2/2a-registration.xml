@@ -7,7 +7,7 @@
 			<contact>
 				<mail>String</mail>
 			</contact>
-			<experience>String</experience>
+			<experience>Integer</experience>
 			<hasDrum>Boolean</hasDrum>
 			<notes>String</notes>
 		</leader>
