@@ -24,7 +24,7 @@
 		</xs:complexType>
 	</xs:element>
 
-	<xs:attribute type="xs:nonNegativeInteger" name="id"/>
+	<xs:attribute type="xs:positiveInteger" name="id"/>
 
 	<xs:element name="category">
 		<xs:complexType>
@@ -36,7 +36,7 @@
 		</xs:complexType>
 	</xs:element>
 
-	<xs:attribute type="xs:nonNegativeInteger" name="parentId"/>
+	<xs:attribute type="xs:positiveInteger" name="parentId"/>
 
 	<xs:element name="images">
 		<xs:complexType>
@@ -226,7 +226,7 @@
 		<xs:simpleType>
 			<xs:union>
 				<xs:simpleType>
-					<xs:restriction base="xs:nonNegativeInteger"/>
+					<xs:restriction base="xs:positiveInteger"/>
 				</xs:simpleType>
 				<xs:simpleType>
 					<xs:restriction base="xs:string"/>
@@ -238,9 +238,9 @@
 	<xs:element name="times">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element type="xs:nonNegativeInteger" name="pre" minOccurs="0"/>
-				<xs:element type="xs:nonNegativeInteger" name="cook" minOccurs="0"/>
-				<xs:element type="xs:nonNegativeInteger" name="rest" minOccurs="0"/>
+				<xs:element type="xs:positiveInteger" name="pre" minOccurs="0"/>
+				<xs:element type="xs:positiveInteger" name="cook" minOccurs="0"/>
+				<xs:element type="xs:positiveInteger" name="rest" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
