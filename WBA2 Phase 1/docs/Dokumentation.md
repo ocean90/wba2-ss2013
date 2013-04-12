@@ -56,7 +56,7 @@ Beide Typen definieren eine Grammatik, die das XML-Dokument erfüllen muss.
 Beispiel für DTD:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE  [
+<!DOCTYPE [
   <!ELEMENT gruss (#PCDATA)>
 ]>
 <gruss>Hallo Welt!</gruss>
@@ -138,10 +138,10 @@ Unterschiede:
 
 _**c)** Arbeiten Sie die Kriterien heraus, die für die Entwicklung einer XML-Schema-Datei beachtet werden müssen. Die Schema-Datei soll die Struktur für eine XML-Datei definieren, in der mehrere unterschiedliche Rezepte gespeichert werden können._
 
-_+ Welche Daten müssen in simple und welche in complex-types abgebildet werden?  
-+ Für welche Daten ist die Abbildung in Attributen sinnvoller?  
-+ Welche Datentypen müssen für die Elemente definiert werden?  
-+ Welche Restriktionen müssen definiert werden?_
+_+ Welche Daten müssen in simple und welche in complex-types abgebildet werden?_  
+_+ Für welche Daten ist die Abbildung in Attributen sinnvoller?_  
+_+ Welche Datentypen müssen für die Elemente definiert werden?_  
+_+ Welche Restriktionen müssen definiert werden?_
 
 **Was sind überhaupt Simple- bzw. Complex-Types?**  
 Simple-Types sind einfach Elemente, die nur reinen Text ohne Kindelemente beinhalten. Dazu zählen auch Attribute. Complex-Types hingegen sind in ihrem Aufbau komplexer und können aus mehreren Attributen, Elementen und Sequenzen bestehen.
