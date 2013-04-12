@@ -3,7 +3,6 @@
 ## Dokumentation zur Phase 1
 Autor: Dominik Schilling
 
-<a id="toc"></a>
 ## Inhaltsverzeichnis
 
 * [Aufgabe 1](#aufgabe-1)
@@ -12,7 +11,6 @@ Autor: Dominik Schilling
 * [Aufgabe 4](#aufgabe-4)
 * [Aufgabe 5](#aufgabe-5)
 
-<a id="aufgabe-1"></a>
 ## Aufgabe 1
 
 _Erklären Sie kurz die Begriffe Wohlgeformtheit, Validität und Namespaces im Bezug auf XML und XML-Schema._
@@ -84,9 +82,8 @@ Beispiel einer Namespace Deklaration:
 
 Im XML-Dokument können die eigentlichen Namen mit dem Präfix `xs` ergänzt werden um so die Eindeutigkeit zu gewährleisten.
 
-<a class="right" href="#toc"><small>zur Übersicht ⇑</small></a><br>
+<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a
 
-<a id="aufgabe-2"></a>
 ## Aufgabe 2
 
 _**a)** Erzeugen Sie ein XML-Dokument, dass die Daten des folgenden Formulars vollständig erfasst: http://www.gm.fh-koeln.de/~vsch/anmeldung/gruppenanmeldung.html  
@@ -104,9 +101,8 @@ Source:
 * [`/misc/Aufgabe 2/2a-registration.json`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%202/2a-registration.json)
 * [`/misc/Aufgabe 2/2a-registration-demo.json`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%202/2a-registration.json)
 
-<a class="right" href="#toc"><small>zur Übersicht ⇑</small></a><br>
+<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a
 
-<a id="aufgabe-3"></a>
 ### Aufgabe 3
 
 _**a)** Gegeben ist folgendes Rezept: http://www.chefkoch.de/rezepte/24641006006067/Lenchen-s-Schokoladenkuchen.html  
@@ -206,9 +202,8 @@ Source:
 * [`/misc/Aufgabe 3/3d-recipes.xml`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%203/3d-recipes.xml)
 * [`/misc/Aufgabe 3/3d-recipes.xsd`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%203/3d-recipes.xsd)
 
-<a class="right" href="#toc"><small>zur Übersicht ⇑</small></a><br>
+<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a
 
-<a id="aufgabe-4"></a>
 ## Aufgabe 4
 _In dieser Aufgabe entwickeln Sie mit Hilfe des JAXB Frameworks ein Java-Programm, welches die XML-Datei aus der vorigen Aufgabe einlesen, modifizieren und ausgeben kann._
 
@@ -216,9 +211,8 @@ Source:
 
 * [`/src`](https://github.com/ocean90/wba2-ss2013/tree/master/WBA2%20Phase%201/src)
 
-<a class="right" href="#toc"><small>zur Übersicht ⇑</small></a><br>
+<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a
 
-<a id="aufgabe-5"></a>
 ## Aufgabe 5
 _Diskutieren Sie, warum es sinnvoll ist Daten in Formaten wie XML oder JSON zu speichern. Stellen Sie außerdem die beiden Formate gegenüber und erläutern Sie kurz deren Vor- und Nachteile._
 
@@ -233,4 +227,4 @@ Je nach Einsatzbereich sollte also das richtige Format gewählt werden:
  * XML als **Auszeichnungssprache**
  * JSON zum **Datenaustausch**
  
- <a class="right" href="#toc"><small>zur Übersicht ⇑</small></a><br>
+<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a
