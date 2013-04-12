@@ -24,7 +24,7 @@ Ein XML-Dokument gilt als wohlgeformt, wenn es bestimmte Regeln bezüglich der S
 
 * **Wurzelelement**  
   Das XML-Dokument muss ein Wurzelement Element besitzen, welches die folgenden Elemente umschließt.   
-  ```
+  ```xml
 <wurzelelement>
 		<kind>
 		</kind>
@@ -54,7 +54,7 @@ Ein XML-Dokument gilt als valide, wenn es die oben erwähnte Eigenschaft besitzt
 Beide Typen definieren eine Grammatik, die das XML-Dokument erfüllen muss.
 
 Beispiel für DTD:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE  [
   <!ELEMENT gruss (#PCDATA)>
@@ -63,7 +63,7 @@ Beispiel für DTD:
 ```
 
 Beispiel für XSD:
-```
+```xsd
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="recipes">
 		<xs:complexType>
@@ -82,7 +82,7 @@ Beispiel einer Namespace Deklaration:
 
 Im XML-Dokument können die eigentlichen Namen mit dem Präfix `xs` ergänzt werden um so die Eindeutigkeit zu gewährleisten.
 
-<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a
+<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a>
 
 ## Aufgabe 2
 
@@ -101,7 +101,7 @@ Source:
 * [`/misc/Aufgabe 2/2a-registration.json`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%202/2a-registration.json)
 * [`/misc/Aufgabe 2/2a-registration-demo.json`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%202/2a-registration.json)
 
-<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a
+<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a>
 
 ### Aufgabe 3
 
@@ -202,7 +202,7 @@ Source:
 * [`/misc/Aufgabe 3/3d-recipes.xml`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%203/3d-recipes.xml)
 * [`/misc/Aufgabe 3/3d-recipes.xsd`](https://github.com/ocean90/wba2-ss2013/blob/master/WBA2%20Phase%201/misc/Aufgabe%203/3d-recipes.xsd)
 
-<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a
+<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a>
 
 ## Aufgabe 4
 _In dieser Aufgabe entwickeln Sie mit Hilfe des JAXB Frameworks ein Java-Programm, welches die XML-Datei aus der vorigen Aufgabe einlesen, modifizieren und ausgeben kann._
@@ -211,7 +211,7 @@ Source:
 
 * [`/src`](https://github.com/ocean90/wba2-ss2013/tree/master/WBA2%20Phase%201/src)
 
-<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a
+<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a>
 
 ## Aufgabe 5
 _Diskutieren Sie, warum es sinnvoll ist Daten in Formaten wie XML oder JSON zu speichern. Stellen Sie außerdem die beiden Formate gegenüber und erläutern Sie kurz deren Vor- und Nachteile._
@@ -227,4 +227,4 @@ Je nach Einsatzbereich sollte also das richtige Format gewählt werden:
  * XML als **Auszeichnungssprache**
  * JSON zum **Datenaustausch**
  
-<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a
+<a href="#inhaltsverzeichnis">zur Übersicht ⇑</a>
