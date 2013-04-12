@@ -6,7 +6,7 @@
 //
 
 
-package jaxbObjects;
+package de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;

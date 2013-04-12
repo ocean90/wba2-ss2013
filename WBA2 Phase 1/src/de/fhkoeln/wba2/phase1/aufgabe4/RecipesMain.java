@@ -1,3 +1,5 @@
+package de.fhkoeln.wba2.phase1.aufgabe4;
+
 import java.util.Scanner;
 
 /**

@@ -6,11 +6,10 @@
 //
 
 
-package jaxbObjects;
+package de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,9 +23,11 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;attribute name="name" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute ref="{}amount"/>
- *       &lt;attribute ref="{}unit"/>
+ *       &lt;sequence>
+ *         &lt;element ref="{}pre" minOccurs="0"/>
+ *         &lt;element ref="{}cook" minOccurs="0"/>
+ *         &lt;element ref="{}rest" minOccurs="0"/>
+ *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -35,91 +36,88 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "ingredient")
-public class Ingredient {
+@XmlType(name = "", propOrder = {
+    "pre",
+    "cook",
+    "rest"
+})
+@XmlRootElement(name = "times")
+public class Times {
 
-    @XmlAttribute(required = true)
-    protected String name;
-    @XmlAttribute
-    protected String amount;
-    @XmlAttribute
-    protected String unit;
+    protected Pre pre;
+    protected Cook cook;
+    protected Rest rest;
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the pre property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Pre }
      *     
      */
-    public String getName() {
-        return name;
+    public Pre getPre() {
+        return pre;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the pre property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Pre }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setPre(Pre value) {
+        this.pre = value;
     }
 
     /**
-     * Gets the value of the amount property.
+     * Gets the value of the cook property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Cook }
      *     
      */
-    public String getAmount() {
-        return amount;
+    public Cook getCook() {
+        return cook;
     }
 
     /**
-     * Sets the value of the amount property.
+     * Sets the value of the cook property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Cook }
      *     
      */
-    public void setAmount(String value) {
-        this.amount = value;
+    public void setCook(Cook value) {
+        this.cook = value;
     }
 
     /**
-     * Gets the value of the unit property.
+     * Gets the value of the rest property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Rest }
      *     
      */
-    public String getUnit() {
-        if (unit == null) {
-            return "";
-        } else {
-            return unit;
-        }
+    public Rest getRest() {
+        return rest;
     }
 
     /**
-     * Sets the value of the unit property.
+     * Sets the value of the rest property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Rest }
      *     
      */
-    public void setUnit(String value) {
-        this.unit = value;
+    public void setRest(Rest value) {
+        this.rest = value;
     }
 
 }

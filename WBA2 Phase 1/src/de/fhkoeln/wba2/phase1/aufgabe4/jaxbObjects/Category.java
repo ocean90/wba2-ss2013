@@ -6,13 +6,15 @@
 //
 
 
-package jaxbObjects;
+package de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -27,9 +29,9 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element ref="{}avatar" minOccurs="0"/>
- *         &lt;element name="userLevel" type="{http://www.w3.org/2001/XMLSchema}integer"/>
  *       &lt;/sequence>
+ *       &lt;attribute ref="{}id"/>
+ *       &lt;attribute ref="{}parentId"/>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -39,18 +41,19 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name",
-    "avatar",
-    "userLevel"
+    "name"
 })
-@XmlRootElement(name = "commentAuthor")
-public class CommentAuthor {
+@XmlRootElement(name = "category")
+public class Category {
 
     @XmlElement(required = true)
     protected String name;
-    protected Avatar avatar;
-    @XmlElement(required = true)
-    protected BigInteger userLevel;
+    @XmlAttribute
+    @XmlSchemaType(name = "positiveInteger")
+    protected BigInteger id;
+    @XmlAttribute
+    @XmlSchemaType(name = "positiveInteger")
+    protected BigInteger parentId;
 
     /**
      * Gets the value of the name property.
@@ -77,51 +80,51 @@ public class CommentAuthor {
     }
 
     /**
-     * Gets the value of the avatar property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Avatar }
-     *     
-     */
-    public Avatar getAvatar() {
-        return avatar;
-    }
-
-    /**
-     * Sets the value of the avatar property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Avatar }
-     *     
-     */
-    public void setAvatar(Avatar value) {
-        this.avatar = value;
-    }
-
-    /**
-     * Gets the value of the userLevel property.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getUserLevel() {
-        return userLevel;
+    public BigInteger getId() {
+        return id;
     }
 
     /**
-     * Sets the value of the userLevel property.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setUserLevel(BigInteger value) {
-        this.userLevel = value;
+    public void setId(BigInteger value) {
+        this.id = value;
+    }
+
+    /**
+     * Gets the value of the parentId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
+     */
+    public BigInteger getParentId() {
+        return parentId;
+    }
+
+    /**
+     * Sets the value of the parentId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
+     */
+    public void setParentId(BigInteger value) {
+        this.parentId = value;
     }
 
 }

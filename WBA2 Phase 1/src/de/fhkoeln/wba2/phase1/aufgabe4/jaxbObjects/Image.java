@@ -6,12 +6,15 @@
 //
 
 
-package jaxbObjects;
+package de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects;
 
+import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -25,11 +28,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{}times" minOccurs="0"/>
- *         &lt;element ref="{}severity" minOccurs="0"/>
- *         &lt;element ref="{}calories" minOccurs="0"/>
- *         &lt;element ref="{}steps"/>
+ *         &lt;element name="author" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="source" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
  *       &lt;/sequence>
+ *       &lt;attribute ref="{}width use="required""/>
+ *       &lt;attribute ref="{}height use="required""/>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -39,115 +42,115 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "times",
-    "severity",
-    "calories",
-    "steps"
+    "author",
+    "source"
 })
-@XmlRootElement(name = "direction")
-public class Direction {
+@XmlRootElement(name = "image")
+public class Image {
 
-    protected Times times;
-    protected String severity;
-    @XmlElement(defaultValue = "keine Angabe")
-    protected String calories;
+    protected String author;
     @XmlElement(required = true)
-    protected Steps steps;
+    @XmlSchemaType(name = "anyURI")
+    protected String source;
+    @XmlAttribute(required = true)
+    protected BigInteger width;
+    @XmlAttribute(required = true)
+    protected BigInteger height;
 
     /**
-     * Gets the value of the times property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Times }
-     *     
-     */
-    public Times getTimes() {
-        return times;
-    }
-
-    /**
-     * Sets the value of the times property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Times }
-     *     
-     */
-    public void setTimes(Times value) {
-        this.times = value;
-    }
-
-    /**
-     * Gets the value of the severity property.
+     * Gets the value of the author property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSeverity() {
-        return severity;
+    public String getAuthor() {
+        return author;
     }
 
     /**
-     * Sets the value of the severity property.
+     * Sets the value of the author property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSeverity(String value) {
-        this.severity = value;
+    public void setAuthor(String value) {
+        this.author = value;
     }
 
     /**
-     * Gets the value of the calories property.
+     * Gets the value of the source property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCalories() {
-        return calories;
+    public String getSource() {
+        return source;
     }
 
     /**
-     * Sets the value of the calories property.
+     * Sets the value of the source property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCalories(String value) {
-        this.calories = value;
+    public void setSource(String value) {
+        this.source = value;
     }
 
     /**
-     * Gets the value of the steps property.
+     * Gets the value of the width property.
      * 
      * @return
      *     possible object is
-     *     {@link Steps }
+     *     {@link BigInteger }
      *     
      */
-    public Steps getSteps() {
-        return steps;
+    public BigInteger getWidth() {
+        return width;
     }
 
     /**
-     * Sets the value of the steps property.
+     * Sets the value of the width property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Steps }
+     *     {@link BigInteger }
      *     
      */
-    public void setSteps(Steps value) {
-        this.steps = value;
+    public void setWidth(BigInteger value) {
+        this.width = value;
+    }
+
+    /**
+     * Gets the value of the height property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
+     */
+    public BigInteger getHeight() {
+        return height;
+    }
+
+    /**
+     * Sets the value of the height property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
+     */
+    public void setHeight(BigInteger value) {
+        this.height = value;
     }
 
 }

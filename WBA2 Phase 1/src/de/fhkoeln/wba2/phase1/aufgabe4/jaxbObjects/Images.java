@@ -6,13 +6,12 @@
 //
 
 
-package jaxbObjects;
+package de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -27,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{}comment" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}image" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,41 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "comment"
+    "image"
 })
-@XmlRootElement(name = "replies")
-public class Replies {
+@XmlRootElement(name = "images")
+public class Images {
 
-    @XmlElement(required = true)
-    protected List<Comment> comment;
+    protected List<Image> image;
 
     /**
-     * Gets the value of the comment property.
+     * Gets the value of the image property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the comment property.
+     * This is why there is not a <CODE>set</CODE> method for the image property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getComment().add(newItem);
+     *    getImage().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Comment }
+     * {@link Image }
      * 
      * 
      */
-    public List<Comment> getComment() {
-        if (comment == null) {
-            comment = new ArrayList<Comment>();
+    public List<Image> getImage() {
+        if (image == null) {
+            image = new ArrayList<Image>();
         }
-        return this.comment;
+        return this.image;
     }
 
 }

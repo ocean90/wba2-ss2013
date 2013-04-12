@@ -1,3 +1,5 @@
+package de.fhkoeln.wba2.phase1.aufgabe4;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,13 +15,14 @@ import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-import jaxbObjects.Comment;
-import jaxbObjects.CommentAuthor;
-import jaxbObjects.Image;
-import jaxbObjects.Ingredient;
-import jaxbObjects.ObjectFactory;
-import jaxbObjects.Recipe;
-import jaxbObjects.Recipes;
+import de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects.Comment;
+import de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects.CommentAuthor;
+import de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects.Image;
+import de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects.Ingredient;
+import de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects.ObjectFactory;
+import de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects.Recipe;
+import de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects.Recipes;
+
 
 /**
  * Controlls the output of one or more recipe/recipes.

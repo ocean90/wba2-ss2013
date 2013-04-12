@@ -6,12 +6,13 @@
 //
 
 
-package jaxbObjects;
+package de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -27,8 +28,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="step" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+ *         &lt;element ref="{}ingredient" maxOccurs="unbounded"/>
  *       &lt;/sequence>
+ *       &lt;attribute ref="{}portions"/>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -38,41 +40,67 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "step"
+    "ingredient"
 })
-@XmlRootElement(name = "steps")
-public class Steps {
+@XmlRootElement(name = "ingredients")
+public class Ingredients {
 
     @XmlElement(required = true)
-    protected List<String> step;
+    protected List<Ingredient> ingredient;
+    @XmlAttribute
+    protected Integer portions;
 
     /**
-     * Gets the value of the step property.
+     * Gets the value of the ingredient property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the step property.
+     * This is why there is not a <CODE>set</CODE> method for the ingredient property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getStep().add(newItem);
+     *    getIngredient().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * {@link Ingredient }
      * 
      * 
      */
-    public List<String> getStep() {
-        if (step == null) {
-            step = new ArrayList<String>();
+    public List<Ingredient> getIngredient() {
+        if (ingredient == null) {
+            ingredient = new ArrayList<Ingredient>();
         }
-        return this.step;
+        return this.ingredient;
+    }
+
+    /**
+     * Gets the value of the portions property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getPortions() {
+        return portions;
+    }
+
+    /**
+     * Sets the value of the portions property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setPortions(Integer value) {
+        this.portions = value;
     }
 
 }

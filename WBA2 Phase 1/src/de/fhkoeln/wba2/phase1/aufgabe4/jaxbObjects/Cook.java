@@ -6,7 +6,7 @@
 //
 
 
-package jaxbObjects;
+package de.fhkoeln.wba2.phase1.aufgabe4.jaxbObjects;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -26,7 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute ref="{}minutes"/>
  *       &lt;attribute ref="{}hours"/>
- *       &lt;attribute ref="{}days"/>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -36,15 +35,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "rest")
-public class Rest {
+@XmlRootElement(name = "cook")
+public class Cook {
 
     @XmlAttribute
     protected Integer minutes;
     @XmlAttribute
     protected Integer hours;
-    @XmlAttribute
-    protected Integer days;
 
     /**
      * Gets the value of the minutes property.
@@ -92,30 +89,6 @@ public class Rest {
      */
     public void setHours(Integer value) {
         this.hours = value;
-    }
-
-    /**
-     * Gets the value of the days property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getDays() {
-        return days;
-    }
-
-    /**
-     * Sets the value of the days property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setDays(Integer value) {
-        this.days = value;
     }
 
 }
